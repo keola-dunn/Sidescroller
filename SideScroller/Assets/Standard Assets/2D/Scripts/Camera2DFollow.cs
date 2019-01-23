@@ -7,21 +7,23 @@ namespace UnityStandardAssets._2D
     {
         public Transform target;
         public float damping = 0;
-        public float lookAheadFactor = 0;
-        public float lookAheadReturnSpeed = 0.5f;
-        public float yCharacterHeightMod = 3.5f;
-        public float lookAheadMoveThreshold = 0.1f;
+        // public float lookAheadFactor = 0;
+        // public float lookAheadReturnSpeed = 0.5f;
+        public float yCharacterHeightMod = 3f;
+        // public float lookAheadMoveThreshold = 0.1f;
 
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
+        private float permanentHeight;
 
         // Use this for initialization
         private void Start()
         {
             m_LastTargetPosition = target.position;
             m_LastTargetPosition.y += yCharacterHeightMod;
+            permanentHeight = m_LastTargetPosition.y;
             m_OffsetZ = (transform.position - target.position).z;
             transform.parent = null;
         }
@@ -33,19 +35,20 @@ namespace UnityStandardAssets._2D
             // only update lookahead pos if accelerating or changed direction
             float xMoveDelta = (target.position - m_LastTargetPosition).x;
 
-            bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+            // bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
-            if (updateLookAheadTarget)
-            {
-                m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
-            }
-            else
-            {
-                m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
-            }
+            // if (updateLookAheadTarget)
+            // {
+            //     m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
+            // }
+            // else
+            // {
+            //     m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
+            // }
 
-            Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
-            aheadTargetPos.y += yCharacterHeightMod;
+            Vector3 aheadTargetPos = Vector3.forward*m_OffsetZ; // + target.position + m_LookAheadPos
+            aheadTargetPos.x = target.position.x;
+            aheadTargetPos.y = permanentHeight;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
             transform.position = newPos;
