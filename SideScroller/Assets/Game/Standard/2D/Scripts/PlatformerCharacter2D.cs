@@ -20,6 +20,12 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+
+
+        public float curHealth = 200;
+        public float maxHealth = 200;
+        public float defense = 1; 
+
         private void Awake()
         {
             // Setting up references.
@@ -117,5 +123,29 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
+
+
+        public void Damage(float[] attr)
+        {
+            //If defense is greater than or equal to damage taken, 1 damage is taken instead
+            if (attr[0] <= (defense - attr[1]))
+            {
+                curHealth--;
+            }
+            else
+            {
+                print(attr[1]);
+                curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
+            }
+        }
+
+
+
     }
+
+
+
+
+
 }

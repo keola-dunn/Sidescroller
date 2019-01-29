@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    //Note-> Currently weapon script adds damage to this, making damage = bulletDamage + weaponDamage
     public float damage = 10f;
     public float xSpeed = 20f;
     public float ySpeed = 20f;
     public float xDirection = 0f;
     public float yDirection = 0f;
+    public float defensePenetration = 0f;
     // public LayerMask notToHit; // Determines what you don't want to hit
     private Rigidbody2D rb;
 
@@ -31,6 +32,8 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
             // Do damage to the enemy
+            float[] array = { damage, defensePenetration };
+            collision.transform.SendMessage("Damage", array);
         }
         Destroy(gameObject);
     }
