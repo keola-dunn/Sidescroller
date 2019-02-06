@@ -3024,6 +3024,36 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1540287091}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: maxDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: attackDistance
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: curHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: defense
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956525894963942480, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa,
+        type: 3}
+      propertyPath: attackPower
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c661f5ac67b88747b7a6cb5c8e0f9fa, type: 3}
 --- !u!1001 &7560164540086583569

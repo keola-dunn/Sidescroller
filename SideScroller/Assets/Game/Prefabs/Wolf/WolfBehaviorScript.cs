@@ -8,9 +8,6 @@ using UnityEngine;
 public class WolfBehaviorScript : EnemyBehaviour
 {
 
-    
-    
-
 
     private new void Awake()
     {
@@ -34,8 +31,11 @@ public class WolfBehaviorScript : EnemyBehaviour
     {
         if (curHealth <= 0)
         {
-            m_dead = true;
-            m_Anim.SetBool("Dead", true);
+
+            
+                m_dead = true;
+                m_Anim.SetBool("Dead", true);
+                FadeOut(0f, 20f);
         }
         else
         {
@@ -43,7 +43,12 @@ public class WolfBehaviorScript : EnemyBehaviour
 
             if (range > attackDistance && range < maxDistance) {
                 m_Anim.SetBool("Run", true);
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, maxSpeed * Time.deltaTime);
+                Vector3 moveGoal = Player.position;
+                if (!FreeYMovement)
+                {
+                    moveGoal.y = transform.position.y;
+                }
+                transform.position = Vector2.MoveTowards(transform.position, moveGoal, maxSpeed * Time.deltaTime);
                 
             }
             else

@@ -38,6 +38,11 @@ public class EnemyBehaviour : MonoBehaviour
     protected bool m_FacingRight;
     public bool m_dead;
 
+    public bool FreeYMovement;
+
+
+    public float currentFade = 1f;
+
 
     protected void Awake()
     {
@@ -68,6 +73,23 @@ public class EnemyBehaviour : MonoBehaviour
         {
             curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
         }
+    }
+
+    
+
+    protected void FadeOut(float fadeGoal, float timeToFade)
+    {
+
+        if( currentFade > fadeGoal)
+        {
+
+
+            currentFade = currentFade - ((currentFade - fadeGoal) / timeToFade);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentFade);
+        }
+
+
+
     }
 
 
