@@ -19,7 +19,7 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-        public Vector3 respawnPoint;
+
 
 
         public float curHealth = 200;
@@ -33,7 +33,6 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
-            respawnPoint = transform.position;
         }
 
 
@@ -141,22 +140,17 @@ namespace UnityStandardAssets._2D
             }
         }
 
-
-        void OnTriggerEnter2D(Collider2D other)
+        public void getHealthPickup(float pickupValue)
         {
-            if(other.tag == "RespawnPlatform")
+            if(maxHealth - curHealth < pickupValue)
             {
-                transform.position = respawnPoint;
+                curHealth = maxHealth;
             }
-
-            ////Respawns to last checkpoint once we implement that
-            //if(other.tag == "Checkpoint")
-            //{
-            //    respawnPoint = other.transform.position;
-            //}
+            else
+            {
+                curHealth += pickupValue;
+            }
         }
-
-
 
     }
 
