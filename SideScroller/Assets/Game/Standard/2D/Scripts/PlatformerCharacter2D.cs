@@ -152,6 +152,11 @@ namespace UnityStandardAssets._2D
             }
         }
 
+        public bool getFacingDirection()
+        {
+            return m_FacingRight;
+        }
+
     }
 
 
