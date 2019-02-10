@@ -24,7 +24,8 @@ namespace UnityStandardAssets._2D
 
         public float curHealth = 200;
         public float maxHealth = 200;
-        public float defense = 1; 
+        public float defense = 1;
+        public float lives = 3;
 
         private void Awake()
         {
@@ -133,6 +134,12 @@ namespace UnityStandardAssets._2D
             if (attr[0] <= (defense - attr[1]))
             {
                 curHealth--;
+            }
+            else if (curHealth <= 0)
+            {
+                transform.position = respawnPoint;
+                curHealth = 200;
+                lives--;
             }
             else
             {
