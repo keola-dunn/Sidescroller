@@ -87,9 +87,17 @@ public class EnemyBehaviour : MonoBehaviour
             currentFade = currentFade - ((currentFade - fadeGoal) / timeToFade);
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentFade);
         }
+    }
 
-
-
+    //Moves toward player, at maxSpeed. Will only move in y direction if FreeYMovement
+    protected void moveTowardsPlayer()
+    {
+        Vector3 moveGoal = Player.position;
+        if (!FreeYMovement)
+        {
+            moveGoal.y = transform.position.y;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, moveGoal, maxSpeed * Time.deltaTime);
     }
 
 

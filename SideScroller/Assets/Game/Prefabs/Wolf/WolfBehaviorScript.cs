@@ -35,7 +35,9 @@ public class WolfBehaviorScript : EnemyBehaviour
             
                 m_dead = true;
                 m_Anim.SetBool("Dead", true);
-                FadeOut(0f, 20f);
+                FadeOut(0f, 80f);
+            Destroy(gameObject, 3f);
+         
         }
         else
         {
@@ -43,12 +45,8 @@ public class WolfBehaviorScript : EnemyBehaviour
 
             if (range > attackDistance && range < maxDistance) {
                 m_Anim.SetBool("Run", true);
-                Vector3 moveGoal = Player.position;
-                if (!FreeYMovement)
-                {
-                    moveGoal.y = transform.position.y;
-                }
-                transform.position = Vector2.MoveTowards(transform.position, moveGoal, maxSpeed * Time.deltaTime);
+
+                moveTowardsPlayer();
                 
             }
             else
