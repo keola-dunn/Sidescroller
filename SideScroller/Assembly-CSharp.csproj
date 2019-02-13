@@ -53,11 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
      <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
      <Compile Include="Assets\Game\Prefabs\WoodenCrate\CrateBehaviorScript.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet.cs" />
      <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
+     <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
+     <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
+     <Compile Include="Assets\Game\Scripts\ImageFade.cs" />
      <Compile Include="Assets\Game\Scripts\Pistol.cs" />
      <Compile Include="Assets\Game\Scripts\Rifle.cs" />
      <Compile Include="Assets\Game\Scripts\RocketLauncher.cs" />

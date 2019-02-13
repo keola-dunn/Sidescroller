@@ -5,34 +5,24 @@ using UnityEngine;
 
 
 
-public class WolfBehaviorScript : MonoBehaviour
+public class WolfBehaviorScript : EnemyBehaviour
 {
 
-    
-    private Animator m_Anim;
-    private float m_maxSpeed = 2f;
-    private Rigidbody2D m_Rigidbody2D;
-    public Transform Player;
-    public float attackDistance = 1.65f;
-    public float maxDistance = 9f;
 
-    public bool m_dead = false;
-    public float curHealth = 100f;
-    public float defense = 5;
-    public float maxHealth = 100f;
-
-    public float attackPower = 10f;
-    private float timeToFire = 0f; // Used to determine when enemy can Attack
-    private float attackRate = 2f;
-
-
-    private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-
-
-    private void Awake()
+    private new void Awake()
     {
-        m_Anim = GetComponent<Animator>();
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        base.Awake();
+        maxSpeed = 2f;
+        maxDistance = 9f;
+        attackDistance = 1.65f;
+
+        maxHealth = 100f;
+        curHealth = 100f;
+        defense = 5;
+        attackPower = 10f;
+        attackRate = 2f;
+        m_FacingRight = true;
+
     }
 
 
@@ -41,8 +31,13 @@ public class WolfBehaviorScript : MonoBehaviour
     {
         if (curHealth <= 0)
         {
-            m_dead = true;
-            m_Anim.SetBool("Dead", true);
+
+            
+                m_dead = true;
+                m_Anim.SetBool("Dead", true);
+                FadeOut(0f, 80f);
+            Destroy(gameObject, 3f);
+         
         }
         else
         {
@@ -50,7 +45,8 @@ public class WolfBehaviorScript : MonoBehaviour
 
             if (range > attackDistance && range < maxDistance) {
                 m_Anim.SetBool("Run", true);
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, m_maxSpeed * Time.deltaTime);
+
+                moveTowardsPlayer();
                 
             }
             else
@@ -96,29 +92,7 @@ public class WolfBehaviorScript : MonoBehaviour
 
 
 
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
-
-    public void Damage(float[] attr)
-    {
-        //If defense is greater than or equal to damage taken, 1 damage is taken instead
-        if (attr[0] <= (defense - attr[1]))
-        {
-            curHealth--;
-        }
-        else
-        {
-            curHealth -= (attr[0] - Mathf.Max(0,(defense - attr[1])));
-        }
-    }
+ 
 }
 
 
