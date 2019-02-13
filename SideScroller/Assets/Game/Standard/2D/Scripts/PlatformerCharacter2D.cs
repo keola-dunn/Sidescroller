@@ -153,6 +153,7 @@ namespace UnityStandardAssets._2D
             }
         }
 
+<<<<<<< HEAD
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "RespawnPlatform")
@@ -164,6 +165,11 @@ namespace UnityStandardAssets._2D
                 //    respawnPoint = other.transform.position;
                 //}
             }
+=======
+        public bool getFacingDirection()
+        {
+            return m_FacingRight;
+>>>>>>> bf48125f398b9c226108ece5dd1ca709dd03acc3
         }
 
     }

@@ -16,7 +16,7 @@ namespace Wep {
             fireRate = 15f;
             damageMultiplier = 0.7f;
             numShots = 5;
-            arcAngle = 30f;
+            arcAngle = 20f;
             increment = arcAngle/numShots;
             base.Awake();
         }

@@ -96,5 +96,10 @@ namespace Wep {
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
         }
+
+        public void setFacingDirection(bool right)
+        {
+            facingRight = right;
+        }
     }
 }
