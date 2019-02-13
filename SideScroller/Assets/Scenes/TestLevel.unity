@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421165cee62f20d40aa952214157f603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletGameObject: {fileID: 2513937854325008716, guid: a44c67f388b70554c87bb2b9be3af705,
+  bulletGameObject: {fileID: 1538760866077248944, guid: fbdafae0ede364d46b660b5cee1095bc,
     type: 3}
   fireRate: 0
   damageMultiplier: 0
