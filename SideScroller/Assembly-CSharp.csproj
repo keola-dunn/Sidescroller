@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
     <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
     <Compile Include="Assets\Game\Prefabs\WoodenCrate\CrateBehaviorScript.cs" />
     <Compile Include="Assets\Game\Scripts\Bullet.cs" />
