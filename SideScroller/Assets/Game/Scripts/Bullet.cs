@@ -15,13 +15,9 @@ public class Bullet : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    protected void FixedUpdate()
-    {
+        rb.gravityScale = 0f;
         rb.velocity = transform.right * speed;
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 0.5f);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) 
