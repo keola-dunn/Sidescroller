@@ -7,6 +7,7 @@ using UnityEngine;
 public class blueGhostBehaviourScript : EnemyBehaviour
 {
 
+    private bool outBool;
 
 
     private new void Awake()
@@ -43,6 +44,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
             if (range > attackDistance && range < maxDistance)
             {
                 m_Anim.SetBool("Out", true);
+                outBool = true;
 
                 moveTowardsPlayer();
 
@@ -63,6 +65,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
                 }
                 else
                 {
+                    outBool = false;
                     m_Anim.SetBool("Out", false);
                 }
             }
@@ -80,4 +83,24 @@ public class blueGhostBehaviourScript : EnemyBehaviour
 
         }
     }
+
+
+    public new void Damage(float[] attr)
+    {
+        //If defense is greater than or equal to damage taken, 1 damage is taken instead
+
+        if (outBool)
+        {
+            if (attr[0] <= (defense - attr[1]))
+            {
+                curHealth--;
+            }
+            else
+            {
+                curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
+            }
+        }
+
+    }
+
 }
