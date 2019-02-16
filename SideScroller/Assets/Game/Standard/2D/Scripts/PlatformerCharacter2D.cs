@@ -35,10 +35,6 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             respawnPoint = transform.position;
-
-
-            GameObject hud = GameObject.Find("HUD");
-            GameObject hbar = GameObject.Find("HealthBar");
             healthBar = Transform.FindObjectOfType<HealthBar>();
         }
 
