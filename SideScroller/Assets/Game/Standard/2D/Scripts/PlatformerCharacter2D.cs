@@ -21,10 +21,11 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         public Vector3 respawnPoint;
 
-
         public float curHealth = 200;
         public float maxHealth = 200;
-        public float defense = 1; 
+        public float defense = 1;
+
+        private HealthBar healthBar;
 
         private void Awake()
         {
@@ -34,6 +35,11 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             respawnPoint = transform.position;
+
+
+            GameObject hud = GameObject.Find("HUD");
+            GameObject hbar = GameObject.Find("HealthBar");
+            healthBar = Transform.FindObjectOfType<HealthBar>();
         }
 
 
@@ -139,18 +145,23 @@ namespace UnityStandardAssets._2D
                 print(attr[1]);
                 curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
             }
+            healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
         public void getHealthPickup(float pickupValue)
         {
-            if(maxHealth - curHealth < pickupValue)
+            if (curHealth != maxHealth)
             {
-                curHealth = maxHealth;
+                if (maxHealth - curHealth <= pickupValue)
+                {
+                    curHealth = maxHealth;
+                }
+                else
+                {
+                    curHealth += pickupValue;
+                }
             }
-            else
-            {
-                curHealth += pickupValue;
-            }
+            healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
         void OnTriggerEnter2D(Collider2D other)
