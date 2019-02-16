@@ -24,7 +24,14 @@ public class HealthBar : MonoBehaviour
 
     public void ChangeHealth(float curHealth, float maxHealth)
     {
-        healthBar.localScale = 
-            new Vector3((curHealth / maxHealth) * fullBar, verticalBarHeight);
+        if (curHealth > 0)
+        {
+            healthBar.localScale =
+                new Vector3((curHealth / maxHealth) * fullBar, verticalBarHeight);
+        }
+        else
+        {
+            healthBar.localScale = new Vector3(0f, verticalBarHeight);
+        }
     }
 }
