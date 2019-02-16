@@ -1,22 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets._2D;
 
-public class HealthBar : MonoBehaviour
+public class EnemyHealthBar : MonoBehaviour
 {
-
     private Transform healthBar;
-    private const float fullBar = 3f;
-    private const float verticalBarHeight = 1f;
+    private const float fullBar = 0.6f;
+    private const float verticalBarHeight = 0.3f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar = transform.Find("Health");
-    
-        //this is how to change the size of the bar
-        //healthBar.localScale = new Vector3(1.5f, verticalBarHeight);
     }
 
 

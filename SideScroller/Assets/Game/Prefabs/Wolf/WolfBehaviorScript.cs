@@ -28,11 +28,15 @@ public class WolfBehaviorScript : MonoBehaviour
 
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+    private EnemyHealthBar mHealthBar;
+
 
     private void Awake()
     {
         m_Anim = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+       
+        mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 
 
@@ -105,6 +109,9 @@ public class WolfBehaviorScript : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        //Flip with transform.localScale = theScale flips the ENTIRE gameObject, including all
+        //of it's children. Do we think we can just flip the sprite?
     }
 
     public void Damage(float[] attr)
@@ -118,6 +125,7 @@ public class WolfBehaviorScript : MonoBehaviour
         {
             curHealth -= (attr[0] - Mathf.Max(0,(defense - attr[1])));
         }
+        mHealthBar.ChangeHealth(curHealth, maxHealth);
     }
 }
 
