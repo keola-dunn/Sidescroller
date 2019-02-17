@@ -26,6 +26,7 @@ namespace UnityStandardAssets._2D
         public float defense = 1;
 
         private HealthBar healthBar;
+        public float lives = 3;
 
         private void Awake()
         {
@@ -136,6 +137,12 @@ namespace UnityStandardAssets._2D
             {
                 curHealth--;
             }
+            else if (curHealth <= 0)
+            {
+                transform.position = respawnPoint;
+                curHealth = 200;
+                lives--;
+            }
             else
             {
                 print(attr[1]);
@@ -160,6 +167,8 @@ namespace UnityStandardAssets._2D
             healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
+
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "RespawnPlatform")
@@ -171,6 +180,11 @@ namespace UnityStandardAssets._2D
                 //    respawnPoint = other.transform.position;
                 //}
             }
+        }
+
+        public bool getFacingDirection()
+        {
+            return m_FacingRight;
         }
 
     }

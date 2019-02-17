@@ -1,0 +1,8 @@
+Notes about sprites:
+
+- Right click in sprites folder and create new sprite to create placeholder sprites for basic use to be replaced later.
+- Change the pixels per unit to larger in order to shrink the size of the sprite.
+	- This can be important later because when sprites are attached to prefabs and then replaced, the new sprite size will depend on the pixels per unit
+	- Don't forget to choose a placeholder name to distinguish between sprites, color change comes when prefab created
+- When creating new sprite, change sprite mode to multiple to create different sizes/units of same sprite type
+ 
