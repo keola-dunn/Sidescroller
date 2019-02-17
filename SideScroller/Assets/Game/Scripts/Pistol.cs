@@ -11,6 +11,8 @@ namespace Wep {
         {   
             fireRate = 50f;
             damageMultiplier = 1f;
+            clipSize = 12;
+            reloadTime = 0.8f;
             base.Awake();
         }
 

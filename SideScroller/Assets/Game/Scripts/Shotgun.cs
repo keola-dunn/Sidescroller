@@ -15,6 +15,8 @@ namespace Wep {
         {   
             fireRate = 15f;
             damageMultiplier = 0.7f;
+            clipSize = 5;
+            reloadTime = 1.5f;
             numShots = 5;
             arcAngle = 20f;
             increment = arcAngle/numShots;
@@ -23,6 +25,7 @@ namespace Wep {
 
         protected override void Shoot()
         {
+            currentAmmo--;
             if (facingRight) {
                 for (int i = 0; i < numShots; ++i) {
                     Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
