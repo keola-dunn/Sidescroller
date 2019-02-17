@@ -9,6 +9,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
 
     private bool outBool;
 
+    private EnemyHealthBar mHealthBar;
 
     private new void Awake()
     {
@@ -25,6 +26,8 @@ public class blueGhostBehaviourScript : EnemyBehaviour
         m_FacingRight = true;
 
         FreeYMovement = true;
+
+        mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 
     // Update is called once per frame
@@ -99,6 +102,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
             {
                 curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
             }
+            mHealthBar.ChangeHealth(curHealth, maxHealth);
         }
 
     }
