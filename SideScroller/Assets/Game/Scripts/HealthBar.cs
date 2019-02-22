@@ -7,24 +7,29 @@ public class HealthBar : MonoBehaviour
 {
 
     private Transform healthBar;
-    private float testVar = 3f;
+    private const float fullBar = 3f;
     private const float verticalBarHeight = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar = transform.Find("Health");
+    
+        //this is how to change the size of the bar
         //healthBar.localScale = new Vector3(1.5f, verticalBarHeight);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ChangeHealth(float curHealth, float maxHealth)
     {
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (testVar > 0)
+        if (curHealth > 0)
         {
-            testVar = testVar - 0.01f;
-            healthBar.localScale = new Vector3(testVar, verticalBarHeight);
+            healthBar.localScale =
+                new Vector3((curHealth / maxHealth) * fullBar, verticalBarHeight);
+        }
+        else
+        {
+            healthBar.localScale = new Vector3(0f, verticalBarHeight);
         }
     }
 }

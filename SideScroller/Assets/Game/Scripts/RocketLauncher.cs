@@ -8,10 +8,10 @@ namespace Wep {
         // Initialization
         protected override void Awake()
         {
-            fireRate = 7.5f;
+            fireRate = 10f;
             damageMultiplier = 1f;
             clipSize = 2;
-            reloadTime = 4f;
+            reloadTime = 2.5f;
             base.Awake();
         }
     }
