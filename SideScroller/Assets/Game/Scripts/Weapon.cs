@@ -9,10 +9,15 @@ namespace Wep {
     
         public float fireRate;
         public float damageMultiplier;
+        public int clipSize;
+        public int clipCount = 10;
+        public float reloadTime;
+        protected int currentAmmo;
+        protected bool isReloading = false;
         protected float timeToFire = 0f; // Used to determine when player can shoot
         protected Transform firePoint;
         protected bool facingRight = true;
-    
+
         // Initialization
         protected virtual void Awake()
         {   
@@ -22,9 +27,10 @@ namespace Wep {
             if (firePoint == null) {
                 Debug.LogError("NO FIREPOINT FOUND!");
             }
+            currentAmmo = clipSize;
         }
         
-        public void Action(bool firing, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
+        public void Action(bool firing, bool reloading, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
         {
             // First determine which direction weapon is facing
             if (!facingRight && rightPressed && !leftPressed) {
@@ -69,23 +75,25 @@ namespace Wep {
                 }
             }
 
-            // Single burst
-            if (fireRate == 0) {
-                if (Input.GetButtonDown("Fire1")) {
-                    Shoot();
+            if (isReloading) {
+                return;
+            }
+            if (currentAmmo <= 0 || reloading) {
+                if (clipCount > 0) {
+                    StartCoroutine(Reload());
                 }
-            } // Continuous fire
-            else {
-                // Check time is after the time a shot is available
-                if (Input.GetButton("Fire1") && Time.time > timeToFire) {
-                    timeToFire = Time.time + 10/fireRate;
-                    Shoot();
-                }
+                return;
+            }
+            // Check time is after the time a shot is available
+            if (firing && Time.time > timeToFire) {
+                timeToFire = Time.time + 10/fireRate;
+                Shoot();
             }
         }
 
         protected virtual void Shoot() 
         {
+            currentAmmo--;
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
             GameObject generatedBullet;
             if (facingRight) {
@@ -95,6 +103,19 @@ namespace Wep {
             }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
+        }
+
+        protected virtual IEnumerator Reload() {
+            isReloading = true;
+            yield return new WaitForSeconds(reloadTime);
+            isReloading = false;
+            clipCount--;
+            currentAmmo = clipSize;
+        }
+
+        protected void OnEnable() {
+            // Switching to current weapon sets isReloading back to false
+            isReloading = false;
         }
 
         public void setFacingDirection(bool right)
