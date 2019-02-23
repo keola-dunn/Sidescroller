@@ -151,7 +151,7 @@ namespace UnityStandardAssets._2D
             healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
-        public void getHealthPickup(float pickupValue)
+        public void GetHealthPickup(float pickupValue)
         {
             if (curHealth != maxHealth)
             {

@@ -3,7 +3,7 @@
 public class HealthPickup : MonoBehaviour
 {
 
-    private float healthBoost = 25f;
+    private float healthBoost = 50f;
 
     private GameObject thisHealthBoost;
 
@@ -16,7 +16,7 @@ public class HealthPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.SendMessage("getHealthPickup", healthBoost);
+            collision.gameObject.SendMessage("GetHealthPickup", healthBoost);
             Destroy(thisHealthBoost);
         }
     }
