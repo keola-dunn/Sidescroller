@@ -3,4 +3,5 @@ Attached is a list of free sprite assets currently sourced:
 Wolf Sprites: https://opengameart.org/content/wolf-game-character
 Wooden Crate #1: https://opengameart.org/content/box-2
 BlueGhost: https://opengameart.org/content/animated-blue-ghost
+MountainBackground Assets: https://opengameart.org/content/generic-platformer-tileset-16x16-background
 

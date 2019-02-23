@@ -50,7 +50,8 @@ namespace UnityStandardAssets._2D
             bool downPressed = Input.GetKey(KeyCode.S);
             bool rightPressed = Input.GetKey(KeyCode.D);
             bool leftPressed = Input.GetKey(KeyCode.A);
-            bool firing = Input.GetButtonDown("Fire1");
+            bool firing = Input.GetButton("Fire1");
+            bool reloading = Input.GetButtonDown("Reload");
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump, upPressed, downPressed, rightPressed, leftPressed);
@@ -58,7 +59,7 @@ namespace UnityStandardAssets._2D
             checkWeaponSwitch();
             // Pass all parameters to the weapon action function
             if (m_Weapon != null) {
-                m_Weapon.Action(firing, upPressed, downPressed, rightPressed, leftPressed);
+                m_Weapon.Action(firing, reloading, upPressed, downPressed, rightPressed, leftPressed);
             }
             m_Jump = false;
         }

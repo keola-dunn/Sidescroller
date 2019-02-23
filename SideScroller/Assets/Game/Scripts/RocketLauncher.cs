@@ -5,11 +5,13 @@ using UnityEngine;
 namespace Wep {
     public class RocketLauncher : Weapon
     {
-        // Start is called before the first frame update
+        // Initialization
         protected override void Awake()
         {
-            fireRate = 7.5f;
+            fireRate = 10f;
             damageMultiplier = 1f;
+            clipSize = 2;
+            reloadTime = 2.5f;
             base.Awake();
         }
     }

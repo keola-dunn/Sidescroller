@@ -10,15 +10,18 @@ namespace Wep {
 
         // Initialization
         protected override void Awake()
-        {   
+        {
             fireRate = 120f;
             damageMultiplier = 0.7f;
             spreadAngle = 3f;
+            clipSize = 20;
+            reloadTime = 1.8f;
             base.Awake();
         }
 
         protected override void Shoot()
         {
+            currentAmmo--;
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
             GameObject generatedBullet;
             if (facingRight) {
