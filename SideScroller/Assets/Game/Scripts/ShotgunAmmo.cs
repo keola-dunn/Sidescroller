@@ -6,11 +6,9 @@ namespace Assets.Game.Scripts
     {
 
         private const int ammoCount = 8;
-        private GameObject thisShotgunAmmo;
 
         public void Start()
         {
-            thisShotgunAmmo = this.gameObject;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -18,7 +16,7 @@ namespace Assets.Game.Scripts
             if (collision.gameObject.CompareTag("Player"))
             {
                 //collision.gameObject.SendMessage("GetHealthPickup", ammoCount);
-                Destroy(thisShotgunAmmo);
+                Destroy(this.gameObject);
             }
         }
     }

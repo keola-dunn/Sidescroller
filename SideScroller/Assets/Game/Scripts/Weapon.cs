@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Wep {
     public class Weapon : MonoBehaviour
@@ -18,6 +19,8 @@ namespace Wep {
         protected Transform firePoint;
         protected bool facingRight = true;
 
+        private Text ammoDisplay;
+
         // Initialization
         protected virtual void Awake()
         {   
@@ -28,6 +31,9 @@ namespace Wep {
                 Debug.LogError("NO FIREPOINT FOUND!");
             }
             currentAmmo = clipSize;
+
+            ammoDisplay = Transform.FindObjectOfType<Text>();
+            SetAmmoText(currentAmmo, clipCount * clipSize);
         }
         
         public void Action(bool firing, bool reloading, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
@@ -103,6 +109,7 @@ namespace Wep {
             }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected virtual IEnumerator Reload() {
@@ -111,6 +118,7 @@ namespace Wep {
             isReloading = false;
             clipCount--;
             currentAmmo = clipSize;
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected void OnEnable() {
@@ -121,6 +129,29 @@ namespace Wep {
         public void setFacingDirection(bool right)
         {
             facingRight = right;
+        }
+
+        protected void SetAmmoText(int inMagazine, int totalAmmo)
+        {
+            if (totalAmmo.Equals(int.MaxValue))
+            {
+                ammoDisplay.text = inMagazine + " / " + ((char)236);
+            }
+            else if(totalAmmo < 100)
+            {
+                if (totalAmmo < 10)
+                {
+                    ammoDisplay.text = "0" + inMagazine + " / 00" + totalAmmo;
+                }
+                else
+                {
+                    ammoDisplay.text = "0" + inMagazine + " / 0" + totalAmmo;
+                }
+            }
+            else
+            {
+                ammoDisplay.text = "0" + inMagazine + " / " + totalAmmo;
+            }
         }
     }
 }

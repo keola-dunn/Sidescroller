@@ -43,6 +43,7 @@ namespace Wep {
                     bulletComponent.multiplyDamage(damageMultiplier);
                 }
             }
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
     }
 }
