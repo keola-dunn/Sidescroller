@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Wep {
     public class Weapon : MonoBehaviour
@@ -16,7 +17,9 @@ namespace Wep {
         protected bool isReloading = false;
         protected float timeToFire = 0f; // Used to determine when player can shoot
         protected Transform firePoint;
-        protected bool facingRight = true;
+        // protected bool facingRight = true;
+
+        private Text ammoDisplay;
 
         // Initialization
         protected virtual void Awake()
@@ -28,8 +31,40 @@ namespace Wep {
                 Debug.LogError("NO FIREPOINT FOUND!");
             }
             currentAmmo = clipSize;
+
+            ammoDisplay = Transform.FindObjectOfType<Text>();
+            SetAmmoText(currentAmmo, clipCount * clipSize);
+        }
+
+        protected void Update() 
+        {
+            // Rotate the weapon towards the mouse and account for flip
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            difference.Normalize();
+            float weaponRotation = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            if (difference.x < 0) {
+                transform.rotation = Quaternion.Euler(0, 180f, 180-weaponRotation);
+            } else {
+                transform.rotation = Quaternion.Euler(0, 0, weaponRotation);
+            }
+
+            if (isReloading) {
+                return;
+            }
+            if (currentAmmo <= 0 || Input.GetButtonDown("Reload")) {
+                if (clipCount > 0 && currentAmmo != clipSize) {
+                    StartCoroutine(Reload());
+                }
+                return;
+            }
+            // Check time is after the time a shot is available
+            if (Input.GetButton("Fire1") && Time.time > timeToFire) {
+                timeToFire = Time.time + 10/fireRate;
+                Shoot();
+            }
         }
         
+        /* Firing in 8 directions, called from Platformer2DUserControl.cs, which listens for user input
         public void Action(bool firing, bool reloading, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
         {
             // First determine which direction weapon is facing
@@ -90,19 +125,23 @@ namespace Wep {
                 Shoot();
             }
         }
+        */
 
         protected virtual void Shoot() 
         {
             currentAmmo--;
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
+            Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+
             GameObject generatedBullet;
-            if (facingRight) {
+            // if (facingRight) {
                 generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation);
-            } else {
-                generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f));
-            }
+            // } else {
+            //     generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f));
+            // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected virtual IEnumerator Reload() {
@@ -111,16 +150,43 @@ namespace Wep {
             isReloading = false;
             clipCount--;
             currentAmmo = clipSize;
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected void OnEnable() {
-            // Switching to current weapon sets isReloading back to false
+            // Switching to current weapon sets isReloading back to false to let weapon fire when reselected
             isReloading = false;
         }
 
+        /* Used to set direction facing from PlatformerCharacter2D, not needed because weapon now faces mouse
         public void setFacingDirection(bool right)
         {
             facingRight = right;
         }
+        */
+
+        protected void SetAmmoText(int inMagazine, int totalAmmo)
+        {
+            if (totalAmmo.Equals(int.MaxValue))
+            {
+                ammoDisplay.text = inMagazine + " / " + ((char)236);
+            }
+            else if(totalAmmo < 100)
+            {
+                if (totalAmmo < 10)
+                {
+                    ammoDisplay.text = "0" + inMagazine + " / 00" + totalAmmo;
+                }
+                else
+                {
+                    ammoDisplay.text = "0" + inMagazine + " / 0" + totalAmmo;
+                }
+            }
+            else
+            {
+                ammoDisplay.text = "0" + inMagazine + " / " + totalAmmo;
+            }
+        }
+
     }
 }

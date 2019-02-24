@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using Wep;
+// using Wep;
 
 namespace UnityStandardAssets._2D
 {
@@ -10,7 +10,9 @@ namespace UnityStandardAssets._2D
     {
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
-        private Wep.Weapon m_Weapon = null;
+
+        // m_Weapon no longer needed since weapon now updates on its own
+        // private Wep.Weapon m_Weapon = null;
         private int weaponCount;
         private int startingWeaponIndex = 2;
         private int currentWeaponIndex;
@@ -21,9 +23,11 @@ namespace UnityStandardAssets._2D
             // Get child by index because different weapons have different names
             weaponCount = transform.childCount - startingWeaponIndex;
             currentWeaponIndex = startingWeaponIndex;
-            if (weaponCount > 0) {
-                m_Weapon = transform.GetChild(currentWeaponIndex).gameObject.GetComponent<Wep.Weapon>();
-            }
+
+            // if (weaponCount > 0) {
+            //     m_Weapon = transform.GetChild(currentWeaponIndex).gameObject.GetComponent<Wep.Weapon>();
+            // }
+
             // Deactivate every weapon except current
             for (int i = currentWeaponIndex + 1; i < transform.childCount; ++i)
             {
@@ -39,6 +43,9 @@ namespace UnityStandardAssets._2D
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+
+            // Switch weapons
+            checkWeaponSwitch();
         }
 
 
@@ -46,21 +53,25 @@ namespace UnityStandardAssets._2D
         {
             // Read the inputs.
             bool crouch = Input.GetKey(KeyCode.LeftControl);
+
+            /* Used to pass inputs to weapon
             bool upPressed = Input.GetKey(KeyCode.W);
             bool downPressed = Input.GetKey(KeyCode.S);
             bool rightPressed = Input.GetKey(KeyCode.D);
             bool leftPressed = Input.GetKey(KeyCode.A);
             bool firing = Input.GetButton("Fire1");
             bool reloading = Input.GetButtonDown("Reload");
+            */
+
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             // Pass all parameters to the character control script.
-            m_Character.Move(h, crouch, m_Jump, upPressed, downPressed, rightPressed, leftPressed);
-            // Switch weapons
-            checkWeaponSwitch();
+            m_Character.Move(h, crouch, m_Jump);
+
             // Pass all parameters to the weapon action function
-            if (m_Weapon != null) {
-                m_Weapon.Action(firing, reloading, upPressed, downPressed, rightPressed, leftPressed);
-            }
+            // if (m_Weapon != null) {
+            //     m_Weapon.Action(firing, reloading, upPressed, downPressed, rightPressed, leftPressed);
+            // }
+
             m_Jump = false;
         }
 
@@ -92,8 +103,8 @@ namespace UnityStandardAssets._2D
                 transform.GetChild(previousWeaponIndex).gameObject.SetActive(false);
                 GameObject nextWeaponGameObject = transform.GetChild(currentWeaponIndex).gameObject;
                 nextWeaponGameObject.SetActive(true);
-                m_Weapon = nextWeaponGameObject.GetComponent<Wep.Weapon>();
-                m_Weapon.setFacingDirection(m_Character.getFacingDirection());
+                // m_Weapon = nextWeaponGameObject.GetComponent<Wep.Weapon>();
+                // m_Weapon.setFacingDirection(m_Character.getFacingDirection());
             }
         }
 

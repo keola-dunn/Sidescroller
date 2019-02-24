@@ -24,13 +24,14 @@ namespace Wep {
             currentAmmo--;
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
             GameObject generatedBullet;
-            if (facingRight) {
+            // if (facingRight) {
                 generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, Random.Range(spreadAngle, -spreadAngle)));
-            } else {
-                generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f + Random.Range(spreadAngle, -spreadAngle)));
-            }
+            // } else {
+            //     generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f + Random.Range(spreadAngle, -spreadAngle)));
+            // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
+            SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
     }
