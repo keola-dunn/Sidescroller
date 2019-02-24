@@ -60,9 +60,11 @@
      <Compile Include="Assets\Game\Scripts\Bullet.cs" />
      <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
      <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
+     <Compile Include="Assets\Game\Scripts\Grenade.cs" />
      <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
      <Compile Include="Assets\Game\Scripts\ImageFade.cs" />
+     <Compile Include="Assets\Game\Scripts\LaserSight.cs" />
      <Compile Include="Assets\Game\Scripts\Pistol.cs" />
      <Compile Include="Assets\Game\Scripts\Rifle.cs" />
      <Compile Include="Assets\Game\Scripts\RocketLauncher.cs" />
@@ -166,7 +168,6 @@
      <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\SkidTrail.cs" />
      <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
      <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
-     <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\Respawn.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />

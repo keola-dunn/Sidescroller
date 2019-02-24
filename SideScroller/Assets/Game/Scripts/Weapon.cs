@@ -16,7 +16,7 @@ namespace Wep {
         protected bool isReloading = false;
         protected float timeToFire = 0f; // Used to determine when player can shoot
         protected Transform firePoint;
-        protected bool facingRight = true;
+        // protected bool facingRight = true;
 
         // Initialization
         protected virtual void Awake()
@@ -46,7 +46,7 @@ namespace Wep {
                 return;
             }
             if (currentAmmo <= 0 || Input.GetButtonDown("Reload")) {
-                if (clipCount > 0) {
+                if (clipCount > 0 && currentAmmo != clipSize) {
                     StartCoroutine(Reload());
                 }
                 return;
@@ -128,11 +128,11 @@ namespace Wep {
             Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
             GameObject generatedBullet;
-            if (facingRight) {
+            // if (facingRight) {
                 generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation);
-            } else {
-                generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f));
-            }
+            // } else {
+            //     generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, 180f));
+            // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
         }

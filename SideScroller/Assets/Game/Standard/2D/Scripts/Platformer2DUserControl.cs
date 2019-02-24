@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using Wep;
+// using Wep;
 
 namespace UnityStandardAssets._2D
 {
