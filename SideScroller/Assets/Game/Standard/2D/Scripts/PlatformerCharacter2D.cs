@@ -59,7 +59,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        public void Move(float move, bool crouch, bool jump, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
+        public void Move(float move, bool crouch, bool jump) //bool upPressed, bool downPressed, bool rightPressed, bool leftPressed
         {
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -77,6 +77,7 @@ namespace UnityStandardAssets._2D
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
             {
+                /* Movement disabler when aiming up or down, not needed since aiming is now with mouse
                 if (m_Grounded) {
                     if (upPressed || downPressed) {
                         // Can't move if aiming up or down
@@ -86,6 +87,8 @@ namespace UnityStandardAssets._2D
                         move = (crouch ? move*m_CrouchSpeed : move);
                     }
                 }
+                */
+                move = (crouch ? move*m_CrouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 m_Anim.SetFloat("Speed", Mathf.Abs(move));
@@ -93,8 +96,10 @@ namespace UnityStandardAssets._2D
                 // Move the character
                 m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
+                /*
                 // If the input is moving the player right and the player is facing left...
-                if (!m_FacingRight && rightPressed && !leftPressed) // Previously took movement into consideration: (!m_FacingRight && move > 0) 
+                // Previously took movement into consideration: (!m_FacingRight && move > 0) 
+                if (!m_FacingRight && rightPressed && !leftPressed) 
                 {
                     // ... flip the player.
                     Flip();
@@ -103,6 +108,13 @@ namespace UnityStandardAssets._2D
                 else if (m_FacingRight && leftPressed && !rightPressed)
                 {
                     // ... flip the player.
+                    Flip();
+                }
+                */
+                float differenceX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+                if (!m_FacingRight && differenceX > 0) {
+                    Flip();
+                } else if (m_FacingRight && differenceX < 0) {
                     Flip();
                 }
             }
@@ -123,9 +135,12 @@ namespace UnityStandardAssets._2D
             m_FacingRight = !m_FacingRight;
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
-            transform.localScale = theScale;
+            // Vector3 theScale = transform.localScale;
+            // theScale.x *= -1;
+            // transform.localScale = theScale;
+
+            // Flip instead with rotating player on y-axis
+            transform.Rotate(0, 180f, 0);
         }
 
 

@@ -29,7 +29,36 @@ namespace Wep {
             }
             currentAmmo = clipSize;
         }
+
+        protected void Update() 
+        {
+            // Rotate the weapon towards the mouse and account for flip
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            difference.Normalize();
+            float weaponRotation = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            if (difference.x < 0) {
+                transform.rotation = Quaternion.Euler(0, 180f, 180-weaponRotation);
+            } else {
+                transform.rotation = Quaternion.Euler(0, 0, weaponRotation);
+            }
+
+            if (isReloading) {
+                return;
+            }
+            if (currentAmmo <= 0 || Input.GetButtonDown("Reload")) {
+                if (clipCount > 0) {
+                    StartCoroutine(Reload());
+                }
+                return;
+            }
+            // Check time is after the time a shot is available
+            if (Input.GetButton("Fire1") && Time.time > timeToFire) {
+                timeToFire = Time.time + 10/fireRate;
+                Shoot();
+            }
+        }
         
+        /* Firing in 8 directions, called from Platformer2DUserControl.cs, which listens for user input
         public void Action(bool firing, bool reloading, bool upPressed, bool downPressed, bool rightPressed, bool leftPressed)
         {
             // First determine which direction weapon is facing
@@ -90,11 +119,14 @@ namespace Wep {
                 Shoot();
             }
         }
+        */
 
         protected virtual void Shoot() 
         {
             currentAmmo--;
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
+            Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+
             GameObject generatedBullet;
             if (facingRight) {
                 generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation);
@@ -114,13 +146,15 @@ namespace Wep {
         }
 
         protected void OnEnable() {
-            // Switching to current weapon sets isReloading back to false
+            // Switching to current weapon sets isReloading back to false to let weapon fire when reselected
             isReloading = false;
         }
 
+        /* Used to set direction facing from PlatformerCharacter2D, not needed because weapon now faces mouse
         public void setFacingDirection(bool right)
         {
             facingRight = right;
         }
+        */
     }
 }
