@@ -74,6 +74,7 @@
     <Compile Include="Assets\Game\Scripts\Rifle.cs" />
     <Compile Include="Assets\Game\Scripts\RocketLauncher.cs" />
     <Compile Include="Assets\Game\Scripts\Shotgun.cs" />
+    <Compile Include="Assets\Game\Scripts\ShotgunAmmo.cs" />
     <Compile Include="Assets\Game\Scripts\StandardBullet.cs" />
     <Compile Include="Assets\Game\Scripts\StandardRocket.cs" />
     <Compile Include="Assets\Game\Scripts\Weapon.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\Respawn.cs" />
+    <Compile Include="Assets\RocketAmmo.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
