@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyHealthBar.cs" />
     <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
     <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
     <Compile Include="Assets\Game\Prefabs\WoodenCrate\CrateBehaviorScript.cs" />
@@ -68,6 +67,7 @@
     <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
     <Compile Include="Assets\Game\Scripts\CheckpointController.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Game\Scripts\EnemyHealthBar.cs" />
     <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Game\Scripts\ImageFade.cs" />
@@ -174,8 +174,6 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Respawn.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
