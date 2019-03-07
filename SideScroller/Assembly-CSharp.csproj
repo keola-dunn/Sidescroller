@@ -60,8 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BoltShot.cs" />
     <Compile Include="Assets\EnemyHealthBar.cs" />
     <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\PantsMen\Bolt.cs" />
+    <Compile Include="Assets\Game\Prefabs\PantsMen\PantsManBehaviour.cs" />
     <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
     <Compile Include="Assets\Game\Prefabs\WoodenCrate\CrateBehaviorScript.cs" />
     <Compile Include="Assets\Game\Scripts\Bullet.cs" />
@@ -176,7 +179,6 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\PantsManBehaviour.cs" />
     <Compile Include="Assets\Respawn.cs" />
     <Compile Include="Assets\RocketAmmo.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
