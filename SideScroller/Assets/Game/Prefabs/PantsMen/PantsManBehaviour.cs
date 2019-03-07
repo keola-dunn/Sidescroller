@@ -15,20 +15,20 @@ public class PantsManBehaviour : EnemyBehaviour
     protected int reloadingCounter;
     protected float kickDistance = 1.2f;
 
-    void Awake()
+    new void Awake()
     {
         base.Awake();
         m_dead = false;
         maxSpeed = 3f;
-        maxDistance = 8f;
-        attackDistance = 4f;
+        maxDistance = 10f;
+        attackDistance = 8f;
 
         maxHealth = 100f;
         curHealth = 100f;
         defense = 5;
         attackPower = 10f;
         attackRate = 2f;
-        m_FacingRight = true;
+        m_FacingRight = false;
         //mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 
@@ -49,14 +49,14 @@ public class PantsManBehaviour : EnemyBehaviour
 
             if (range > attackDistance && range < maxDistance)
             {
-                m_Anim.SetBool("Run", true);
+                m_Anim.SetBool("Running", true);
 
                 moveTowardsPlayer();
 
             }
             else
             {
-                m_Anim.SetBool("Run", false);
+                m_Anim.SetBool("Running", false);
                 if (range <= attackDistance)
                 {
                     m_Anim.SetBool("Attacking", true);
@@ -81,7 +81,7 @@ public class PantsManBehaviour : EnemyBehaviour
 
                             m_Anim.SetBool("Attacking", false);
                             m_Anim.SetBool("Kicking", false);
-                            m_Anim.SetBool("Run", true);
+                            m_Anim.SetBool("Running", true);
                             moveTowardsPlayer();
                         }
                         else
@@ -114,37 +114,6 @@ public class PantsManBehaviour : EnemyBehaviour
 
         }
     }
-
-
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-
-        //Flip with transform.localScale = theScale flips the ENTIRE gameObject, including all
-        //of it's children. Do we think we can just flip the sprite?
-    }
-
-    public void Damage(float[] attr)
-    {
-        //If defense is greater than or equal to damage taken, 1 damage is taken instead
-        if (attr[0] <= (defense - attr[1]))
-        {
-            curHealth--;
-        }
-        else
-        {
-            curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
-        }
-        // mHealthBar.ChangeHealth(curHealth, maxHealth);
-    }
-
-
 
     public void Kick()
     {
