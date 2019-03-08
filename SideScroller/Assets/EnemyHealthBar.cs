@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyHealthBar : MonoBehaviour
 {
     private Transform healthBar;
-    private const float fullBar = 0.6f;
+    private  float fullBar = 0.6f;
     private const float verticalBarHeight = 0.3f;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        fullBar = transform.Find("Health").localScale.x;
         healthBar = transform.Find("Health");
     }
 

@@ -181,6 +181,7 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
+    <Compile Include="Assets\MaceBehaviourScript.cs" />
     <Compile Include="Assets\Respawn.cs" />
     <Compile Include="Assets\RocketAmmo.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
@@ -227,6 +228,7 @@
     <None Include="Assets\Game\Standard\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Game\Standard\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Game\Standard\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Jacob/Desktop/New folder/Sidescroller/SideScroller/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
