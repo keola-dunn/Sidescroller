@@ -161,7 +161,6 @@ namespace UnityStandardAssets._2D
             }
             else
             {
-                print(attr[1]);
                 curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
             }
             healthBar.ChangeHealth(curHealth, maxHealth);

@@ -7,13 +7,11 @@ using UnityEngine;
 
 public class WolfBehaviorScript : EnemyBehaviour
 {
-
-    private EnemyHealthBar mHealthBar;
+    
 
     private new void Awake()
     {
         base.Awake();
-        m_dead = false;
         maxSpeed = 4f;
         maxDistance = 9f;
         attackDistance = 1.65f;
@@ -72,51 +70,17 @@ public class WolfBehaviorScript : EnemyBehaviour
                     m_Anim.SetBool("Attacking", false);
                 }
             }
+           
 
 
-
-
-
-            //flipping wolf character to follow
-            if (Player.position.x > transform.position.x && m_FacingRight)
-            {
-                Flip();
-            } else if(Player.position.x < transform.position.x && !m_FacingRight)
-            {
-                Flip();
-            }
+            flipCheck();
 
         }
     }
 
+    
 
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-
-        //Flip with transform.localScale = theScale flips the ENTIRE gameObject, including all
-        //of it's children. Do we think we can just flip the sprite?
-    }
-
-    public void Damage(float[] attr)
-    {
-        //If defense is greater than or equal to damage taken, 1 damage is taken instead
-        if (attr[0] <= (defense - attr[1]))
-        {
-            curHealth--;
-        }
-        else
-        {
-            curHealth -= (attr[0] - Mathf.Max(0,(defense - attr[1])));
-        }
-        mHealthBar.ChangeHealth(curHealth, maxHealth);
-    }
+   
 }
 
 

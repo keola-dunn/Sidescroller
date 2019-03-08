@@ -9,8 +9,6 @@ public class PantsManBehaviour : EnemyBehaviour
 
     public Bolt bolt;
 
-    private EnemyHealthBar mHealthBar;
-
     protected bool isReloading;
     protected int reloadingCounter;
     protected float kickDistance = 1.2f;
@@ -98,19 +96,7 @@ public class PantsManBehaviour : EnemyBehaviour
                 }
             }
 
-
-
-
-
-            //flipping wolf character to follow
-            if (Player.position.x > transform.position.x && m_FacingRight)
-            {
-                Flip();
-            }
-            else if (Player.position.x < transform.position.x && !m_FacingRight)
-            {
-                Flip();
-            }
+            flipCheck();
 
         }
     }

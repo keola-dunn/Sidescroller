@@ -63,6 +63,7 @@
     <Compile Include="Assets\BoltShot.cs" />
     <Compile Include="Assets\EnemyHealthBar.cs" />
     <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\eagle\EagleBehaviourScript.cs" />
     <Compile Include="Assets\Game\Prefabs\PantsMen\Bolt.cs" />
     <Compile Include="Assets\Game\Prefabs\PantsMen\PantsManBehaviour.cs" />
     <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
