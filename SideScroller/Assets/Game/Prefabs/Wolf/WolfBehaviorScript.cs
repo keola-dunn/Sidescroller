@@ -14,7 +14,7 @@ public class WolfBehaviorScript : EnemyBehaviour
     {
         base.Awake();
         m_dead = false;
-        maxSpeed = 2f;
+        maxSpeed = 4f;
         maxDistance = 9f;
         attackDistance = 1.65f;
 

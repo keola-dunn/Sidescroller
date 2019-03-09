@@ -27,6 +27,7 @@ namespace UnityStandardAssets._2D
 
         private HealthBar healthBar;
         public float lives = 3;
+        private LifeCount lifeDisplay;
 
         private void Awake()
         {
@@ -37,6 +38,7 @@ namespace UnityStandardAssets._2D
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             respawnPoint = transform.position;
             healthBar = Transform.FindObjectOfType<HealthBar>();
+            lifeDisplay = Transform.FindObjectOfType<LifeCount>();
         }
 
 
@@ -158,6 +160,7 @@ namespace UnityStandardAssets._2D
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
+                lifeDisplay.Die();
             }
             else
             {

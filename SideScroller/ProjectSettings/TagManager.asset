@@ -8,6 +8,7 @@ TagManager:
   - GhostPlatform
   - SolidPlatform
   - RespawnPlatform
+  - HUD
   layers:
   - Default
   - TransparentFX
