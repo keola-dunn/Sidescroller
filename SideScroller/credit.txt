@@ -4,4 +4,6 @@ Wolf Sprites: https://opengameart.org/content/wolf-game-character
 Wooden Crate #1: https://opengameart.org/content/box-2
 BlueGhost: https://opengameart.org/content/animated-blue-ghost
 MountainBackground Assets: https://opengameart.org/content/generic-platformer-tileset-16x16-background
+PantsMen: https://opengameart.org/content/hero-spritesheets-ars-notoria
+Possum & Eagle Enemy: https://assetstore.unity.com/packages/2d/characters/sunny-land-103349
 

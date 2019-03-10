@@ -11,10 +11,10 @@ namespace Wep {
         // Initialization
         protected override void Awake()
         {
-            fireRate = 120f;
+            fireRate = 150f;
             damageMultiplier = 0.7f;
             spreadAngle = 3f;
-            clipSize = 20;
+            clipSize = 30;
             reloadTime = 1.8f;
             base.Awake();
         }
@@ -31,7 +31,7 @@ namespace Wep {
             // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
-            SetAmmoText(currentAmmo, clipSize * clipCount);
+            // SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
     }

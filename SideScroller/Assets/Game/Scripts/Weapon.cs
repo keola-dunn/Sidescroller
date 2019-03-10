@@ -31,8 +31,10 @@ namespace Wep {
                 Debug.LogError("NO FIREPOINT FOUND!");
             }
             currentAmmo = clipSize;
+            
+            ammoDisplay = 
+               GameObject.FindGameObjectWithTag("HUD").transform.Find("AmmoDisplay").GetComponent<Text>();
 
-            ammoDisplay = Transform.FindObjectOfType<Text>();
             SetAmmoText(currentAmmo, clipCount * clipSize);
         }
 
@@ -141,7 +143,7 @@ namespace Wep {
             // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
-            SetAmmoText(currentAmmo, clipSize * clipCount);
+            // SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected virtual IEnumerator Reload() {
@@ -150,7 +152,7 @@ namespace Wep {
             isReloading = false;
             clipCount--;
             currentAmmo = clipSize;
-            SetAmmoText(currentAmmo, clipSize * clipCount);
+            // SetAmmoText(currentAmmo, clipSize * clipCount);
         }
 
         protected void OnEnable() {
@@ -165,6 +167,7 @@ namespace Wep {
         }
         */
 
+        
         protected void SetAmmoText(int inMagazine, int totalAmmo)
         {
             if (totalAmmo.Equals(int.MaxValue))
@@ -187,6 +190,6 @@ namespace Wep {
                 ammoDisplay.text = "0" + inMagazine + " / " + totalAmmo;
             }
         }
-
+        
     }
 }
