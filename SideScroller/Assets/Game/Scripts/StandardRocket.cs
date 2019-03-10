@@ -11,7 +11,7 @@ public class StandardRocket : Bullet
     protected override void Awake()
     {
         damage = 50f;
-        speed = 10f;
+        speed = 15f;
         defensePenetration = 2f;
         base.Awake();
     }

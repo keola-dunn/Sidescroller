@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 45df6b61e6dde914eb13fa41fce80298
+guid: 105a8afeadabfb94aad162d762faa4bd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sidescroller-Bullet-Ammo-Option-2
+    21300000: StandardBulletSprite
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -85,21 +85,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sidescroller-Bullet-Ammo-Option-2
+      name: StandardBulletSprite
       rect:
         serializedVersion: 2
-        x: 80
-        y: 40
-        width: 88
-        height: 208
+        x: 69
+        y: 484
+        width: 128
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -64, y: -18}
+        - {x: -64, y: 18}
+        - {x: 64, y: 18}
+        - {x: 64, y: -18}
+      physicsShape:
+      - - {x: -64, y: -18}
+        - {x: -64, y: 18}
+        - {x: 64, y: 18}
+        - {x: 64, y: -18}
       tessellationDetail: 0
       bones: []
-      spriteID: 3ebd4c7959d076d4f848ce52831daeb4
+      spriteID: 6f3b72e3f0831bd4195db557e5accd4b
       vertices: []
       indices: 
       edges: []
@@ -107,7 +115,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 93db67ae53beb124e9607b161bc7f603
+    spriteID: bfbec997f04f215469e0deeb272f05da
     vertices: []
     indices: 
     edges: []
