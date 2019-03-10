@@ -9,14 +9,14 @@ public class HealthPickup : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("GetHealthPickup", healthBoost);
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(),
                 collision.gameObject.GetComponent<BoxCollider2D>(), true);

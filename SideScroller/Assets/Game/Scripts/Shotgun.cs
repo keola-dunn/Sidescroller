@@ -34,6 +34,7 @@ namespace Wep {
                     Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
                     bulletComponent.multiplyDamage(damageMultiplier);
                 }
+            SetAmmoText(currentAmmo, clipSize * clipCount);
 
             // } else {
             //     for (int i = 0; i < numShots; ++i) {
