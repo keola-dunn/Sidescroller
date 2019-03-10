@@ -13,7 +13,7 @@ public class EagleBehaviourScript : EnemyBehaviour
     {
         base.Awake();
         maxSpeed = 4f;
-        maxDistance = 10f;
+        maxDistance = 12f;
         attackDistance = 1.4f;
 
         maxHealth = 150f;

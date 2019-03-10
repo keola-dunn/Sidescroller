@@ -22,13 +22,13 @@ public class MaceBehaviourScript : EnemyBehaviour
         base.Awake();
         maxSpeed = 4f;
         maxDistance = 10f;
-        attackDistance = 1.3f;
+        attackDistance = 1.4f;
 
         maxHealth = 300;
         curHealth = 300;
         defense = 20;
         attackPower = 30;
-        attackRate = 6f;
+        attackRate = 2f;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 

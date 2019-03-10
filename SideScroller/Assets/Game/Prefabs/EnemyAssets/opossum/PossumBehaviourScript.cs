@@ -12,7 +12,7 @@ public class PossumBehaviourScript : EnemyBehaviour
     private new void Awake()
     {
         base.Awake();
-        maxSpeed = 4f;
+        maxSpeed = 5.5f;
         maxDistance = 10f;
         attackDistance = 1.2f;
 

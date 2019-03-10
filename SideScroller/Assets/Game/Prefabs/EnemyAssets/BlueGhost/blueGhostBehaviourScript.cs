@@ -14,7 +14,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
     {
         base.Awake();
         maxSpeed = 4f;
-        maxDistance = 6f;
+        maxDistance = 10f;
         attackDistance = 1.70f;
 
         maxHealth = 100f;
