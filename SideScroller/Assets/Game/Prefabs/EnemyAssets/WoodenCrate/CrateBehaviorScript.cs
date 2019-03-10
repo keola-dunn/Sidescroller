@@ -7,7 +7,7 @@ public class CrateBehaviorScript : EnemyBehaviour
 
 
 
-    private void Awake()
+    private new void Awake()
     {
         m_Anim = GetComponent<Animator>();
         curHealth = 20f;
