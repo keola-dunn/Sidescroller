@@ -32,8 +32,15 @@ namespace Wep {
             }
             currentAmmo = clipSize;
 
+<<<<<<< HEAD
             ammoDisplay = Transform.FindObjectOfType<Text>();
             // SetAmmoText(currentAmmo, clipCount * clipSize);
+=======
+            ammoDisplay = 
+                GameObject.FindGameObjectWithTag("HUD").transform.Find("AmmoDisplay").GetComponent<Text>();
+
+            SetAmmoText(currentAmmo, clipCount * clipSize);
+>>>>>>> 58432f5f0f065d4e45f92b09731b94953d420962
         }
 
         protected void Update() 
