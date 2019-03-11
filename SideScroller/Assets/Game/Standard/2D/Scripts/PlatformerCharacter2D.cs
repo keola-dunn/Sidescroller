@@ -7,9 +7,12 @@ namespace UnityStandardAssets._2D
     {
         [SerializeField] private float m_MaxSpeed = 5.5f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 750f;                  // Amount of force added when the player jumps.
+
+        [SerializeField] private float doubleJumpForce = 550f;
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -28,6 +31,8 @@ namespace UnityStandardAssets._2D
         private HealthBar healthBar;
         public float lives = 3;
         private LifeCount lifeDisplay;
+
+        private bool canDoubleJump = true;
 
         private void Awake()
         {
@@ -51,8 +56,13 @@ namespace UnityStandardAssets._2D
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject != gameObject) {
                     m_Grounded = true;
+                    canDoubleJump = true;
+                }
+                // if (colliders[i].gameObject.tag == "GhostPlatform" && m_Rigidbody2D.velocity.y > 0) {
+                //     canDoubleJump = false;
+                // }
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -120,14 +130,21 @@ namespace UnityStandardAssets._2D
                     Flip();
                 }
             }
-            // If the player should jump...
-            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+
+            if (jump)
             {
-                // Add a vertical force to the player.
-                m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                if (m_Grounded && m_Anim.GetBool("Ground"))
+                {
+                    m_Grounded = false;
+                    m_Anim.SetBool("Ground", false);
+                    m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
+                    m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                } else if (canDoubleJump) {
+                    canDoubleJump = false;
+                    move = (crouch ? move*m_CrouchSpeed : move);
+                    m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, 0);
+                    m_Rigidbody2D.AddForce(new Vector2(0f, doubleJumpForce));
+                }
             }
         }
 
@@ -164,7 +181,6 @@ namespace UnityStandardAssets._2D
             }
             else
             {
-                print(attr[1]);
                 curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
             }
             healthBar.ChangeHealth(curHealth, maxHealth);
@@ -186,30 +202,25 @@ namespace UnityStandardAssets._2D
             healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
-
-
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "RespawnPlatform")
             {
                 transform.position = respawnPoint;
-                ////Respawns to last checkpoint once we implement that
-                //if(other.tag == "Checkpoint")
-                //{
-                //    respawnPoint = other.transform.position;
-                //}
+            }
+
+            //Respawns to last checkpoint once we implement that
+            if(other.tag == "Checkpoint")
+            {
+                respawnPoint = other.transform.position;
             }
         }
 
+        /*
         public bool getFacingDirection()
         {
             return m_FacingRight;
         }
-
+        */
     }
-
-
-
-
-
 }

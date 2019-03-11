@@ -14,7 +14,7 @@ namespace UnityStandardAssets._2D
         // m_Weapon no longer needed since weapon now updates on its own
         // private Wep.Weapon m_Weapon = null;
         private int weaponCount;
-        private int startingWeaponIndex = 2;
+        private int startingWeaponIndex = 3;
         private int currentWeaponIndex;
 
         private void Awake()

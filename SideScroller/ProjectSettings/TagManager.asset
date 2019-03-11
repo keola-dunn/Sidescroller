@@ -8,7 +8,6 @@ TagManager:
   - GhostPlatform
   - SolidPlatform
   - RespawnPlatform
-  - HUD
   layers:
   - Default
   - TransparentFX
@@ -25,8 +24,8 @@ TagManager:
   - ForeGround
   - Bullets
   - GhostPlatform
-  - 
-  - 
+  - PlayerStandOnGhostPlatform
+  - GhostPlatformFellThrough
   - 
   - 
   - 
@@ -54,6 +53,9 @@ TagManager:
     locked: 0
   - name: GhostPlatform
     uniqueID: 3359866863
+    locked: 0
+  - name: GhostPlatformFellThrough
+    uniqueID: 2294691551
     locked: 0
   - name: Enemy
     uniqueID: 1445553501

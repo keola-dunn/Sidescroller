@@ -14,7 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     //Rigidbody of Enemy
     protected Rigidbody2D m_Rigidbody2D;
 
-
+    protected EnemyHealthBar mHealthBar;
 
     //Max Speed of Enemy 
     protected float maxSpeed;
@@ -51,6 +51,22 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
 
+
+    //Flips enemy by inverting x, to face direction of player based on m_FacingRight
+    protected void flipCheck()
+    {
+        if (Player.position.x > transform.position.x && m_FacingRight)
+        {
+            Flip();
+        }
+        else if (Player.position.x < transform.position.x && !m_FacingRight)
+        {
+            Flip();
+        }
+    }
+
+
+
     protected void Flip()
     {
         // Switch the way the player is labelled as facing.
@@ -73,17 +89,21 @@ public class EnemyBehaviour : MonoBehaviour
         {
             curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
         }
+        if(mHealthBar != null)
+        {
+            mHealthBar.ChangeHealth(curHealth, maxHealth);
+        }
     }
 
-    
+
+
 
     protected void FadeOut(float fadeGoal, float timeToFade)
     {
 
         if( currentFade > fadeGoal)
         {
-
-
+           
             currentFade = currentFade - ((currentFade - fadeGoal) / timeToFade);
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentFade);
         }

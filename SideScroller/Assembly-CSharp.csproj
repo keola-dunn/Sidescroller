@@ -60,13 +60,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Game\Prefabs\BlueGhost\blueGhostBehaviourScript.cs" />
-    <Compile Include="Assets\Game\Prefabs\Wolf\WolfBehaviorScript.cs" />
-    <Compile Include="Assets\Game\Prefabs\WoodenCrate\CrateBehaviorScript.cs" />
+    <Compile Include="Assets\BoltShot.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\BlueGhost\blueGhostBehaviourScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\eagle\EagleBehaviourScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\opossum\PossumBehaviourScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\PantsMen\Bolt.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\PantsMen\PantsManBehaviour.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\Wolf\WolfBehaviorScript.cs" />
+    <Compile Include="Assets\Game\Prefabs\EnemyAssets\WoodenCrate\CrateBehaviorScript.cs" />
     <Compile Include="Assets\Game\Scripts\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
+    <Compile Include="Assets\Game\Scripts\CheckpointController.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Game\Scripts\FallThroughGhostPlatform.cs" />
     <Compile Include="Assets\Game\Scripts\Grenade.cs" />
     <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
@@ -179,7 +186,7 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\LifeCount.cs" />
-    <Compile Include="Assets\PantsManBehaviour.cs" />
+    <Compile Include="Assets\MaceBehaviourScript.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -224,6 +231,7 @@
     <None Include="Assets\Game\Standard\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Game\Standard\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Game\Standard\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/hapah/Desktop/Sidescroller/SideScroller/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

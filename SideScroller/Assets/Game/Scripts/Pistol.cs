@@ -16,5 +16,12 @@ namespace Wep {
             base.Awake();
         }
 
+        protected override IEnumerator Reload() {
+            isReloading = true;
+            yield return new WaitForSeconds(reloadTime);
+            isReloading = false;
+            currentAmmo = clipSize;
+            // SetAmmoText(currentAmmo, clipSize * clipCount);
+        }
     }
 }
