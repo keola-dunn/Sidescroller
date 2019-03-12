@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets._2D
 {
@@ -210,11 +211,23 @@ namespace UnityStandardAssets._2D
             }
 
             //Respawns to last checkpoint once we implement that
-            if(other.tag == "Checkpoint")
+            else if(other.tag == "Checkpoint")
             {
                 respawnPoint = other.transform.position;
             }
+            else if (other.tag.Equals("Finish"))
+            {
+                //If the player reaches the endpoint of a level
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                {
+                    GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+                }
+            }
+            
+
         }
+        
 
         /*
         public bool getFacingDirection()
