@@ -26,7 +26,7 @@ namespace Wep {
         protected override void Shoot()
         {
             currentAmmo--;
-            if (facingRight) {
+            // if (facingRight) {
                 for (int i = 0; i < numShots; ++i) {
                     Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
                     float shotDirection = arcAngle/2 - i*increment;
@@ -34,15 +34,16 @@ namespace Wep {
                     Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
                     bulletComponent.multiplyDamage(damageMultiplier);
                 }
-            } else {
-                for (int i = 0; i < numShots; ++i) {
-                    Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
-                    float flipAdjustedShotDirection = 180f + arcAngle/2 - i*increment;
-                    GameObject generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, flipAdjustedShotDirection));
-                    Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
-                    bulletComponent.multiplyDamage(damageMultiplier);
-                }
-            }
+
+            // } else {
+            //     for (int i = 0; i < numShots; ++i) {
+            //         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
+            //         float flipAdjustedShotDirection = 180f + arcAngle/2 - i*increment;
+            //         GameObject generatedBullet = Instantiate(bulletGameObject, firePointPosition, transform.rotation * Quaternion.Euler(0f, 0f, flipAdjustedShotDirection));
+            //         Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
+            //         bulletComponent.multiplyDamage(damageMultiplier);
+            //     }
+            // }
         }
     }
 }
