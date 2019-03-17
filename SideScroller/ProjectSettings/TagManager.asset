@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - GhostPlatform
   - SolidPlatform
+  - Enemy
   - RespawnPlatform
   layers:
   - Default
@@ -46,23 +46,23 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: BackGround
-    uniqueID: 1191766741
+    uniqueID: 3745751095
     locked: 0
   - name: SolidPlatform
-    uniqueID: 4046573503
+    uniqueID: 2960257255
     locked: 0
   - name: GhostPlatform
-    uniqueID: 3359866863
+    uniqueID: 635613563
     locked: 0
   - name: GhostPlatformFellThrough
-    uniqueID: 2294691551
+    uniqueID: 2275465281
     locked: 0
   - name: Enemy
-    uniqueID: 1445553501
+    uniqueID: 3253918561
     locked: 0
   - name: Player
-    uniqueID: 278662951
+    uniqueID: 1500790617
     locked: 0
   - name: ForeGround
-    uniqueID: 1464569641
+    uniqueID: 3772114951
     locked: 0

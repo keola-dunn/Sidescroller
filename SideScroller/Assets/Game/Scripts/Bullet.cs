@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.tag == "Enemy") {
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") {
             // Do damage to the enemy
             float[] array = { damage, defensePenetration };
             collision.transform.SendMessage("Damage", array);

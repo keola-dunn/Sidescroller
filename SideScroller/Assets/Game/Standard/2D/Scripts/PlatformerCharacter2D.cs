@@ -13,6 +13,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
+
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
@@ -29,6 +30,7 @@ namespace UnityStandardAssets._2D
 
         private HealthBar healthBar;
         public float lives = 3;
+        private LifeCount lifeDisplay;
 
         private bool canDoubleJump = true;
 
@@ -41,6 +43,7 @@ namespace UnityStandardAssets._2D
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             respawnPoint = transform.position;
             healthBar = Transform.FindObjectOfType<HealthBar>();
+            lifeDisplay = Transform.FindObjectOfType<LifeCount>();
         }
 
 
@@ -174,10 +177,10 @@ namespace UnityStandardAssets._2D
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
+                lifeDisplay.Die();
             }
             else
             {
-                print(attr[1]);
                 curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
             }
             healthBar.ChangeHealth(curHealth, maxHealth);
@@ -204,11 +207,12 @@ namespace UnityStandardAssets._2D
             if (other.tag == "RespawnPlatform")
             {
                 transform.position = respawnPoint;
-                ////Respawns to last checkpoint once we implement that
-                //if(other.tag == "Checkpoint")
-                //{
-                //    respawnPoint = other.transform.position;
-                //}
+            }
+
+            //Respawns to last checkpoint once we implement that
+            if(other.tag == "Checkpoint")
+            {
+                respawnPoint = other.transform.position;
             }
         }
 
