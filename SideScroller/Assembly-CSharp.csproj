@@ -72,6 +72,7 @@
      <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
      <Compile Include="Assets\Game\Scripts\ImageFade.cs" />
      <Compile Include="Assets\Game\Scripts\LaserSight.cs" />
+     <Compile Include="Assets\Game\Scripts\MovingWallTurret.cs" />
      <Compile Include="Assets\Game\Scripts\Pistol.cs" />
      <Compile Include="Assets\Game\Scripts\RangedSoldier.cs" />
      <Compile Include="Assets\Game\Scripts\Respawn.cs" />

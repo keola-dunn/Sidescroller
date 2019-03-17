@@ -19,7 +19,7 @@ public class RangedSoldier : EnemyBehaviour
         attackDistance = 6f;
 
         maxHealth = 60f;
-        curHealth = 60f;
+        curHealth = maxHealth;
         defense = 2;
         attackPower = 5f;
         attackRate = 3f;
@@ -41,11 +41,13 @@ public class RangedSoldier : EnemyBehaviour
         } else {
             float range = Vector2.Distance(transform.position, Player.position);
             if (range > attackDistance && range < maxDistance) {
+                rotateWeapon();
                 moveTowardsPlayer();
             } else {
-                rotateWeapon();
+                
                 if (range <= attackDistance)
                 {
+                    rotateWeapon();
                     if (Time.time > timeToFire)
                     {
                         timeToFire = Time.time + 1 / attackRate;
