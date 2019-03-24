@@ -14,7 +14,7 @@ public class RangedSoldier : EnemyBehaviour
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 8f;
+        maxSpeed = 5f;
         maxDistance = 14f;
         attackDistance = 6f;
 

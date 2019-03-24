@@ -57,7 +57,7 @@ public class MovingWallTurret : EnemyBehaviour
                         timeToMove = Time.time + 5 / moveRate;
                     }
                     Vector2 nextPosition = new Vector2(transform.position.x, initialYPosition + Random.Range(-verticalMovementRange, verticalMovementRange));
-                    transform.position = Vector2.MoveTowards(transform.position, nextPosition, maxSpeed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, nextPosition, 2*verticalMovementRange);
                 }
                 if (Time.time > timeToFire) {
                     timeToFire = Time.time + 1 / attackRate;
