@@ -14,15 +14,15 @@ public class RangedSoldier : EnemyBehaviour
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 5f;
+        maxSpeed = 4f;
         maxDistance = 14f;
-        attackDistance = 6f;
+        attackDistance = 8f;
 
         maxHealth = 60f;
         curHealth = maxHealth;
         defense = 2;
         attackPower = 5f;
-        attackRate = 3f;
+        attackRate = 1f;
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
         boxCollider = GetComponent<BoxCollider2D>();

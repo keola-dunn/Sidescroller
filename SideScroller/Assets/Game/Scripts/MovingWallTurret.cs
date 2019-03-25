@@ -12,27 +12,33 @@ public class MovingWallTurret : EnemyBehaviour
     public float timeToMove;
     public float moveRate;
     public bool panicMode;
+    public int numShots;
+    public float arcAngle;
+    private float increment;
+    private Vector2 nextPosition;
 
     // Initialization
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 8f;
-        maxDistance = 14f;
-
+        maxSpeed = 9f;
+        maxDistance = 15f;
         maxHealth = 500f;
         curHealth = maxHealth;
         defense = 3;
         attackPower = 5f;
-        attackRate = 1f;
+        attackRate = 2f;
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
         boxCollider = GetComponent<BoxCollider2D>();
         firePoint = transform.Find("FirePoint");
         initialYPosition = transform.position.y;
-        verticalMovementRange = 5;
-        moveRate = 3f;
+        verticalMovementRange = 6;
+        moveRate = 4f;
         panicMode = false;
+        numShots = 3;
+        arcAngle = 15f;
+        increment = arcAngle/numShots;
     }
 
     // Update is called once per frame
@@ -42,10 +48,10 @@ public class MovingWallTurret : EnemyBehaviour
             boxCollider.isTrigger = true;
             m_dead = true;
             FadeOut(0, 25f);
-            Destroy(gameObject, 1f);
+            Destroy(transform.parent.gameObject, 1f);
         } else {
             float range = Vector2.Distance(transform.position, Player.position);
-            if (curHealth <= maxHealth) {
+            if (curHealth <= maxHealth/2) {
                 panicMode = true;
             }
             if (range <= maxDistance)
@@ -54,11 +60,11 @@ public class MovingWallTurret : EnemyBehaviour
                     if (!panicMode) {
                         timeToMove = Time.time + 10 / moveRate;
                     } else {
-                        timeToMove = Time.time + 5 / moveRate;
+                        timeToMove = Time.time + 7 / moveRate;
                     }
-                    Vector2 nextPosition = new Vector2(transform.position.x, initialYPosition + Random.Range(-verticalMovementRange, verticalMovementRange));
-                    transform.position = Vector2.MoveTowards(transform.position, nextPosition, 2*verticalMovementRange);
+                    nextPosition = new Vector2(transform.position.x, initialYPosition + Random.Range(-verticalMovementRange, verticalMovementRange));
                 }
+                transform.position = Vector2.MoveTowards(transform.position, nextPosition, maxSpeed * Time.deltaTime);
                 if (Time.time > timeToFire) {
                     timeToFire = Time.time + 1 / attackRate;
                     Attack();
@@ -74,11 +80,24 @@ public class MovingWallTurret : EnemyBehaviour
         Vector3 difference = Player.position - firePoint.position;
         difference.Normalize();
         float bulletRotation = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        GameObject generatedBullet;
         if (difference.x < 0) {
-            generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 180f, 180f - bulletRotation));
+            if (!panicMode) {
+                Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 180f, 180f - bulletRotation));
+            } else {
+                for (int i = 0; i < numShots; ++i) {
+                    float shotDirection = arcAngle/2 - i*increment;
+                    Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 180f, shotDirection));
+                }
+            }
         } else {
-            generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 0, bulletRotation));
+            if (!panicMode) {
+                Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 0, bulletRotation));
+            } else {
+                for (int i = 0; i < numShots; ++i) {
+                    float shotDirection = arcAngle/2 - i*increment;
+                    Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 0f, shotDirection));
+                }
+            }
         }
     }
 }
