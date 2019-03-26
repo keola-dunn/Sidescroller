@@ -81,6 +81,9 @@
     <Compile Include="Assets\Game\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Game\Scripts\ImageFade.cs" />
     <Compile Include="Assets\Game\Scripts\LaserSight.cs" />
+    <Compile Include="Assets\Game\Scripts\LevelSelect.cs" />
+    <Compile Include="Assets\Game\Scripts\LifeCount.cs" />
+    <Compile Include="Assets\Game\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Game\Scripts\MovingWallTurret.cs" />
     <Compile Include="Assets\Game\Scripts\Pistol.cs" />
     <Compile Include="Assets\Game\Scripts\RangedSoldier.cs" />
@@ -189,7 +192,6 @@
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Game\Standard\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\LifeCount.cs" />
     <Compile Include="Assets\MaceBehaviourScript.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />

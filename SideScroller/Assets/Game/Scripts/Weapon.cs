@@ -169,9 +169,9 @@ namespace Wep {
         */
 
         
-        protected void SetAmmoText(int inMagazine, int totalAmmo, bool pistol)
+        protected void SetAmmoText(int inMagazine, int totalAmmo, bool infiniteAmmo)
         {
-            if (pistol)
+            if (infiniteAmmo)
             {
                 ammoDisplay.text = inMagazine + " / " + "\u221E";
             }
