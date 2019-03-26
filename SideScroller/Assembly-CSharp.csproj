@@ -201,6 +201,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\WandA.cs" />
     <None Include="Assets\Game\Standard\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Game\Standard\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Game\Standard\Prototyping\Shaders\WorldCoordDiffuse.shader" />
