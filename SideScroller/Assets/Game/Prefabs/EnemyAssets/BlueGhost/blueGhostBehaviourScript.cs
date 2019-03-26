@@ -16,7 +16,6 @@ public class blueGhostBehaviourScript : EnemyBehaviour
         maxSpeed = 4f;
         maxDistance = 10f;
         attackDistance = 1.70f;
-
         maxHealth = 100f;
         curHealth = 100f;
         defense = 1;
