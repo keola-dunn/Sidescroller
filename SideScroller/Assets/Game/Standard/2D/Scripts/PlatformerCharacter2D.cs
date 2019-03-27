@@ -217,12 +217,15 @@ namespace UnityStandardAssets._2D
             }
             else if (other.tag.Equals("Finish"))
             {
-                //If the player reaches the endpoint of a level
-                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+               
+                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
-                    GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                    GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+                    Destroy(enemy);
                 }
+               
             }
             
 

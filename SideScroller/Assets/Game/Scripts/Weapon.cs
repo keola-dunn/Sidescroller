@@ -192,6 +192,11 @@ namespace Wep {
             }
         }
 
+        public void SetAmmoText()
+        {
+            SetAmmoText(currentAmmo, clipCount * clipSize, clipSize == 10);
+        }
+
         protected void SetReloadingText()
         {
             string sHalf = ammoDisplay.text.Substring(ammoDisplay.text.IndexOf("/"));
