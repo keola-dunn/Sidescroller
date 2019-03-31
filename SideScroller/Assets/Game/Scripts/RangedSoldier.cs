@@ -34,8 +34,8 @@ public class RangedSoldier : EnemyBehaviour
     private void Update()
     {
         if (curHealth <= 0) {
-            boxCollider.isTrigger = true;
             m_dead = true;
+            m_Rigidbody2D.isKinematic = true;
             FadeOut(0, 25f);
             Destroy(gameObject, 1f);
         } else {
@@ -75,5 +75,6 @@ public class RangedSoldier : EnemyBehaviour
     {
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         GameObject generatedBullet = Instantiate(bulletGameObject, firePointPosition, weapon.rotation);
+        generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
     }
 }
