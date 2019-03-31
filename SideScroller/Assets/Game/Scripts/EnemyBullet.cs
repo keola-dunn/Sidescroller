@@ -7,8 +7,7 @@ public class EnemyBullet : Bullet
     // Initialization
     private void Awake()
     {
-        damage = 10f;
-        speed = 12.5f;
+        speed = 15f;
         base.Awake();
     }
 

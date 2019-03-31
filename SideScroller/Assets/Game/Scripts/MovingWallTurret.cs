@@ -80,22 +80,27 @@ public class MovingWallTurret : EnemyBehaviour
         Vector3 difference = Player.position - firePoint.position;
         difference.Normalize();
         float bulletRotation = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        GameObject generatedBullet;
         if (difference.x < 0) {
             if (!panicMode) {
-                Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 180f, 180f - bulletRotation));
+                generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 180f, 180f - bulletRotation));
+                generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
             } else {
                 for (int i = 0; i < numShots; ++i) {
                     float shotDirection = arcAngle/2 - i*increment;
-                    Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 180f, shotDirection));
+                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 180f, shotDirection));
+                    generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
                 }
             }
         } else {
             if (!panicMode) {
-                Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 0, bulletRotation));
+                generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 0, bulletRotation));
+                generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
             } else {
                 for (int i = 0; i < numShots; ++i) {
                     float shotDirection = arcAngle/2 - i*increment;
-                    Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 0f, shotDirection));
+                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 0f, shotDirection));
+                    generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
                 }
             }
         }
