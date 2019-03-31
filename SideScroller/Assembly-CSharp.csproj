@@ -68,11 +68,15 @@
     <Compile Include="Assets\Game\Prefabs\EnemyAssets\PantsMen\PantsManBehaviour.cs" />
     <Compile Include="Assets\Game\Prefabs\EnemyAssets\Wolf\WolfBehaviorScript.cs" />
     <Compile Include="Assets\Game\Prefabs\EnemyAssets\WoodenCrate\CrateBehaviorScript.cs" />
+    <Compile Include="Assets\Game\Scripts\BasicRangedSoldier.cs" />
     <Compile Include="Assets\Game\Scripts\Bullet.cs" />
     <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
     <Compile Include="Assets\Game\Scripts\CheckpointController.cs" />
+    <Compile Include="Assets\Game\Scripts\Drone.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Game\Scripts\EnemyBullet.cs" />
     <Compile Include="Assets\Game\Scripts\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Game\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Game\Scripts\FallThroughGhostPlatform.cs" />
     <Compile Include="Assets\Game\Scripts\Grenade.cs" />
     <Compile Include="Assets\Game\Scripts\HealthBar.cs" />
@@ -82,7 +86,9 @@
     <Compile Include="Assets\Game\Scripts\LevelSelect.cs" />
     <Compile Include="Assets\Game\Scripts\LifeCount.cs" />
     <Compile Include="Assets\Game\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Game\Scripts\MovingWallTurret.cs" />
     <Compile Include="Assets\Game\Scripts\Pistol.cs" />
+    <Compile Include="Assets\Game\Scripts\RangedSoldier.cs" />
     <Compile Include="Assets\Game\Scripts\Respawn.cs" />
     <Compile Include="Assets\Game\Scripts\Rifle.cs" />
     <Compile Include="Assets\Game\Scripts\RocketAmmo.cs" />
@@ -91,6 +97,8 @@
     <Compile Include="Assets\Game\Scripts\ShotgunAmmo.cs" />
     <Compile Include="Assets\Game\Scripts\StandardBullet.cs" />
     <Compile Include="Assets\Game\Scripts\StandardRocket.cs" />
+    <Compile Include="Assets\Game\Scripts\StationaryTurret.cs" />
+    <Compile Include="Assets\Game\Scripts\StrongerRangedSoldier.cs" />
     <Compile Include="Assets\Game\Scripts\Weapon.cs" />
     <Compile Include="Assets\Game\Scripts\WeaponSwitching.cs" />
     <Compile Include="Assets\Game\Standard\2D\Scripts\Camera2DFollow.cs" />
@@ -197,6 +205,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\WandA.cs" />
     <None Include="Assets\Game\Standard\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Game\Standard\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Game\Standard\Prototyping\Shaders\WorldCoordDiffuse.shader" />

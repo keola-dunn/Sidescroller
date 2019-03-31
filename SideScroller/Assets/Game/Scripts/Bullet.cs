@@ -35,4 +35,11 @@ public class Bullet : MonoBehaviour
         damage *= ratio;
     }
 
+    public void setDamage(float d) {
+        damage = d;
+    }
+
+    public void setSpeed(float s) {
+        speed = s;
+    }
 }

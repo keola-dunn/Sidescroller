@@ -16,16 +16,13 @@ public class blueGhostBehaviourScript : EnemyBehaviour
         maxSpeed = 4f;
         maxDistance = 10f;
         attackDistance = 1.70f;
-
         maxHealth = 100f;
         curHealth = 100f;
         defense = 1;
         attackPower = 20f;
         attackRate = 4f;
         m_FacingRight = true;
-
         FreeYMovement = true;
-
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 
@@ -79,5 +76,27 @@ public class blueGhostBehaviourScript : EnemyBehaviour
     }
 
 
+    public new void Damage(float[] attr)
+    {
+        //If defense is greater than or equal to damage taken, 1 damage is taken instead
+        if (outBool)
+        {
+            if (attr[0] <= (defense - attr[1]))
+            {
+                curHealth--;
+            }
+            else
+            {
+                curHealth -= (attr[0] - Mathf.Max(0, (defense - attr[1])));
+            }
+            if (mHealthBar != null)
+            {
+                mHealthBar.ChangeHealth(curHealth, maxHealth);
+            }
+        }
+
     }
+
+
+}
 
