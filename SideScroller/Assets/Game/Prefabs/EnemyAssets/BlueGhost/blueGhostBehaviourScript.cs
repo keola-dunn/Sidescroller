@@ -22,9 +22,7 @@ public class blueGhostBehaviourScript : EnemyBehaviour
         attackPower = 20f;
         attackRate = 4f;
         m_FacingRight = true;
-
         FreeYMovement = true;
-
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -176,20 +177,8 @@ namespace UnityStandardAssets._2D
             else if (curHealth <= 0)
             {
                 //Handle death events here
-                var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
-                var deathText = deathHud.GetChild(0);
-                Color deathHudColor = deathHud.GetComponent<Image>().color;
-                Color deathTextColor = deathText.GetComponent<Text>().color;
-
-                for(float i = 0; i<256; ++i)
-                {
-                    deathHudColor.a = (i / 255);
-                    deathHud.GetComponent<Image>().color = deathHudColor;
-                    deathTextColor.a = (i / 255);
-                    deathText.GetComponent<Text>().color = deathTextColor;
-                    new WaitForSecondsRealtime(1f);
-                }
-
+                //PlayerDeath();
+                StartCoroutine("PlayerDeath");
 
                 transform.position = respawnPoint;
                 curHealth = 200;
@@ -247,6 +236,29 @@ namespace UnityStandardAssets._2D
 
         }
         
+        private IEnumerator PlayerDeath()
+        {
+            var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
+            var deathText = deathHud.GetChild(0);
+            Color deathHudColor = deathHud.GetComponent<Image>().color;
+            Color deathTextColor = deathText.GetComponent<Text>().color;
+
+            for(int i = 0; i<256; ++i)
+            {
+                deathHudColor.a = (i / 255);
+                deathHud.GetComponent<Image>().color = deathHudColor;
+                deathTextColor.a = (i / 255);
+                deathText.GetComponent<Text>().color = deathTextColor;
+                yield return new WaitForSeconds(2f);
+            }
+
+            deathHudColor.a = 0;
+            deathTextColor.a = 0;
+
+            deathHud.GetComponent<Image>().color = deathHudColor;
+            deathText.GetComponent<Text>().color = deathTextColor;
+
+        }
 
         /*
         public bool getFacingDirection()
