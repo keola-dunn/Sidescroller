@@ -5,24 +5,16 @@ using UnityEngine;
 public class RangedSoldier : EnemyBehaviour
 {
 
-    private BoxCollider2D boxCollider;
-    private Transform firePoint;
-    private Transform weapon;
+    protected BoxCollider2D boxCollider;
+    protected Transform firePoint;
+    protected Transform weapon;
     public GameObject bulletGameObject;
 
     // Initialization
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 4f;
-        maxDistance = 14f;
-        attackDistance = 8f;
-
-        maxHealth = 60f;
-        curHealth = maxHealth;
-        defense = 2;
-        attackPower = 5f;
-        attackRate = 1f;
+        
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -35,7 +27,8 @@ public class RangedSoldier : EnemyBehaviour
     {
         if (curHealth <= 0) {
             m_dead = true;
-            m_Rigidbody2D.isKinematic = true;
+            boxCollider.isTrigger = true;
+            m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
             Destroy(gameObject, 1f);
         } else {

@@ -38,4 +38,8 @@ public class Bullet : MonoBehaviour
     public void setDamage(float d) {
         damage = d;
     }
+
+    public void setSpeed(float s) {
+        speed = s;
+    }
 }
