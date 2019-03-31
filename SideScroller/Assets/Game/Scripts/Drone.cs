@@ -35,7 +35,8 @@ public class Drone : EnemyBehaviour
     {
         if (curHealth <= 0) {
             m_dead = true;
-            m_Rigidbody2D.isKinematic = true;
+            boxCollider.isTrigger = true;
+            m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
             Destroy(gameObject, 1f);
         } else {

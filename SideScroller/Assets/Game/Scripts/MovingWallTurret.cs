@@ -21,12 +21,12 @@ public class MovingWallTurret : EnemyBehaviour
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 9f;
-        maxDistance = 15f;
-        maxHealth = 500f;
+        maxSpeed = 10f;
+        maxDistance = 20f;
+        maxHealth = 700f;
         curHealth = maxHealth;
         defense = 3;
-        attackPower = 5f;
+        attackPower = 7f;
         attackRate = 2f;
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
@@ -53,6 +53,7 @@ public class MovingWallTurret : EnemyBehaviour
             float range = Vector2.Distance(transform.position, Player.position);
             if (curHealth <= maxHealth/2) {
                 panicMode = true;
+                attackRate = 3f;
             }
             if (range <= maxDistance)
             {
