@@ -236,27 +236,8 @@ namespace UnityStandardAssets._2D
 
         }
         
-        private IEnumerator PlayerDeath()
+        private void PlayerDeath(float currentFade, float timeToFade)
         {
-            var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
-            var deathText = deathHud.GetChild(0);
-            Color deathHudColor = deathHud.GetComponent<Image>().color;
-            Color deathTextColor = deathText.GetComponent<Text>().color;
-
-            for(int i = 0; i<256; ++i)
-            {
-                deathHudColor.a = (i / 255);
-                deathHud.GetComponent<Image>().color = deathHudColor;
-                deathTextColor.a = (i / 255);
-                deathText.GetComponent<Text>().color = deathTextColor;
-                yield return new WaitForSeconds(2f);
-            }
-
-            deathHudColor.a = 0;
-            deathTextColor.a = 0;
-
-            deathHud.GetComponent<Image>().color = deathHudColor;
-            deathText.GetComponent<Text>().color = deathTextColor;
 
         }
 
