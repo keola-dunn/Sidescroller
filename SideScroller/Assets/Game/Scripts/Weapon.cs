@@ -35,7 +35,7 @@ namespace Wep {
             ammoDisplay = 
                GameObject.FindGameObjectWithTag("HUD").transform.Find("AmmoDisplay").GetComponent<Text>();
 
-            SetAmmoText(currentAmmo, clipCount * clipSize);
+            SetAmmoText(currentAmmo, clipCount * clipSize, false);
         }
 
         protected void Update() 
@@ -143,16 +143,17 @@ namespace Wep {
             // }
             Bullet bulletComponent = generatedBullet.GetComponent<Bullet>();
             bulletComponent.multiplyDamage(damageMultiplier);
-            // SetAmmoText(currentAmmo, clipSize * clipCount);
+            SetAmmoText(currentAmmo, clipSize * clipCount, false);
         }
 
         protected virtual IEnumerator Reload() {
             isReloading = true;
+            SetReloadingText();
             yield return new WaitForSeconds(reloadTime);
             isReloading = false;
             clipCount--;
             currentAmmo = clipSize;
-            // SetAmmoText(currentAmmo, clipSize * clipCount);
+            SetAmmoText(currentAmmo, clipSize * clipCount, false);
         }
 
         protected void OnEnable() {
@@ -168,11 +169,11 @@ namespace Wep {
         */
 
         
-        protected void SetAmmoText(int inMagazine, int totalAmmo)
+        protected void SetAmmoText(int inMagazine, int totalAmmo, bool infiniteAmmo)
         {
-            if (totalAmmo.Equals(int.MaxValue))
+            if (infiniteAmmo)
             {
-                ammoDisplay.text = inMagazine + " / " + ((char)236);
+                ammoDisplay.text = inMagazine + " / " + "\u221E";
             }
             else if(totalAmmo < 100)
             {
@@ -189,6 +190,17 @@ namespace Wep {
             {
                 ammoDisplay.text = "0" + inMagazine + " / " + totalAmmo;
             }
+        }
+
+        public void SetAmmoText()
+        {
+            SetAmmoText(currentAmmo, clipCount * clipSize, clipSize == 10);
+        }
+
+        protected void SetReloadingText()
+        {
+            string sHalf = ammoDisplay.text.Substring(ammoDisplay.text.IndexOf("/"));
+            ammoDisplay.text = "reloading " + sHalf;
         }
         
     }

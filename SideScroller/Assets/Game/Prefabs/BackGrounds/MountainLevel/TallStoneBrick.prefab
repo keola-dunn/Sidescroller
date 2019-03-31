@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7126322895381596395}
   - component: {fileID: 3483035749728550545}
   - component: {fileID: 558033194611798315}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TallStoneBrick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

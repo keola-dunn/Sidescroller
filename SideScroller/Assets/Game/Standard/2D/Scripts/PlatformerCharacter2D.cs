@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets._2D
 {
@@ -174,6 +176,10 @@ namespace UnityStandardAssets._2D
             }
             else if (curHealth <= 0)
             {
+                //Handle death events here
+                //PlayerDeath();
+                StartCoroutine("PlayerDeath");
+
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
@@ -210,10 +216,48 @@ namespace UnityStandardAssets._2D
             }
 
             //Respawns to last checkpoint once we implement that
-            if(other.tag == "Checkpoint")
+            else if(other.tag == "Checkpoint")
             {
                 respawnPoint = other.transform.position;
             }
+            else if (other.tag.Equals("Finish"))
+            {
+               
+                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+                {
+                    Destroy(enemy);
+                }
+               
+            }
+            
+
+        }
+        
+        private IEnumerator PlayerDeath()
+        {
+            var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
+            var deathText = deathHud.GetChild(0);
+            Color deathHudColor = deathHud.GetComponent<Image>().color;
+            Color deathTextColor = deathText.GetComponent<Text>().color;
+
+            for(int i = 0; i<256; ++i)
+            {
+                deathHudColor.a = (i / 255);
+                deathHud.GetComponent<Image>().color = deathHudColor;
+                deathTextColor.a = (i / 255);
+                deathText.GetComponent<Text>().color = deathTextColor;
+                yield return new WaitForSeconds(2f);
+            }
+
+            deathHudColor.a = 0;
+            deathTextColor.a = 0;
+
+            deathHud.GetComponent<Image>().color = deathHudColor;
+            deathText.GetComponent<Text>().color = deathTextColor;
+
         }
 
         /*
