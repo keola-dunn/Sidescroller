@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using Wep;
 // using Wep;
 
 namespace UnityStandardAssets._2D
@@ -103,6 +104,24 @@ namespace UnityStandardAssets._2D
                 transform.GetChild(previousWeaponIndex).gameObject.SetActive(false);
                 GameObject nextWeaponGameObject = transform.GetChild(currentWeaponIndex).gameObject;
                 nextWeaponGameObject.SetActive(true);
+
+                if(nextWeaponGameObject.name == "PistolA")
+                {
+                    nextWeaponGameObject.GetComponent<Pistol>().SetAmmoText();
+                }
+                else if(nextWeaponGameObject.name == "RifleA")
+                {
+                    nextWeaponGameObject.GetComponent<Rifle>().SetAmmoText();
+                }
+                else if (nextWeaponGameObject.name == "ShotgunA")
+                {
+                    nextWeaponGameObject.GetComponent<Shotgun>().SetAmmoText();
+                }
+                else
+                {
+                    nextWeaponGameObject.GetComponent<RocketLauncher>().SetAmmoText();
+                }
+
                 // m_Weapon = nextWeaponGameObject.GetComponent<Wep.Weapon>();
                 // m_Weapon.setFacingDirection(m_Character.getFacingDirection());
             }

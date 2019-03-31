@@ -175,6 +175,22 @@ namespace UnityStandardAssets._2D
             }
             else if (curHealth <= 0)
             {
+                //Handle death events here
+                var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
+                var deathText = deathHud.GetChild(0);
+                Color deathHudColor = deathHud.GetComponent<Image>().color;
+                Color deathTextColor = deathText.GetComponent<Text>().color;
+
+                for(float i = 0; i<256; ++i)
+                {
+                    deathHudColor.a = (i / 255);
+                    deathHud.GetComponent<Image>().color = deathHudColor;
+                    deathTextColor.a = (i / 255);
+                    deathText.GetComponent<Text>().color = deathTextColor;
+                    new WaitForSecondsRealtime(1f);
+                }
+
+
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
@@ -217,12 +233,15 @@ namespace UnityStandardAssets._2D
             }
             else if (other.tag.Equals("Finish"))
             {
-                //If the player reaches the endpoint of a level
-                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+               
+                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+
+                foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
-                    GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                    GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
+                    Destroy(enemy);
                 }
+               
             }
             
 
