@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyBullet : Bullet
 {
     // Initialization
+
+    public int damageScene = 0;
     private void Awake()
     {
         speed = 15f;
@@ -14,7 +16,11 @@ public class EnemyBullet : Bullet
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.tag == "Player") {
-            // Do damage to the enemy
+            //Allows rewriting of basic enemyBullet damage in a prefab (if desired)
+            if(damageScene > 0)
+            {
+                damage = damageScene;
+            }
             float[] array = { damage, 0 };
             collision.transform.SendMessage("Damage", array);
         }
