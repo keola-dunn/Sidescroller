@@ -9,7 +9,7 @@ public class BasicRangedSoldier : RangedSoldier
     {
         base.Awake();
         maxSpeed = 4f;
-        maxDistance = 14f;
+        maxDistance = 18f;
         attackDistance = 8f;
 
         maxHealth = 60f;

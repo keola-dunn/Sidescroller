@@ -18,7 +18,7 @@ public class Drone : EnemyBehaviour
         maxDistance = 20f;
         attackDistance = 12f;
 
-        maxHealth = 20f;
+        maxHealth = 35f;
         curHealth = maxHealth;
         defense = 2;
         attackPower = 3f;

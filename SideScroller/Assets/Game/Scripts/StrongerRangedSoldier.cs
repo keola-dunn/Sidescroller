@@ -8,11 +8,11 @@ public class StrongerRangedSoldier : RangedSoldier
     void Awake()
     {
         base.Awake();
-        maxSpeed = 5f;
-        maxDistance = 14f;
+        maxSpeed = 5.5f;
+        maxDistance = 18f;
         attackDistance = 8f;
 
-        maxHealth = 100f;
+        maxHealth = 140f;
         curHealth = maxHealth;
         defense = 2;
         attackPower = 8f;

@@ -12,10 +12,10 @@ namespace Wep {
         protected override void Awake()
         {
             fireRate = 150f;
-            damageMultiplier = 0.7f;
+            damageMultiplier = 0.8f;
             spreadAngle = 3f;
             clipSize = 30;
-            reloadTime = 1.8f;
+            reloadTime = 1.5f;
             base.Awake();
         }
 
