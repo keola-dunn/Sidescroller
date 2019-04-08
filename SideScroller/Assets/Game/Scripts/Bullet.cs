@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.velocity = transform.right * speed;
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 0.75f);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) 

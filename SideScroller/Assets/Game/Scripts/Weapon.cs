@@ -11,7 +11,7 @@ namespace Wep {
         public float fireRate;
         public float damageMultiplier;
         public int clipSize;
-        public int clipCount = 10;
+        public int clipCount = 50;
         public float reloadTime;
         protected int currentAmmo;
         protected bool isReloading = false;

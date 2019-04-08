@@ -8,7 +8,7 @@ public class StandardBullet : Bullet
     protected override void Awake()
     {
         damage = 10f;
-        speed = 25f;
+        speed = 30f;
         defensePenetration = 1f;
         base.Awake();
     }

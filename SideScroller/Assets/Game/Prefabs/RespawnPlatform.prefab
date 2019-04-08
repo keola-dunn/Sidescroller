@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 8460245428710314386}
   - component: {fileID: 8460245428710314381}
   - component: {fileID: 8460245428710314380}
-  - component: {fileID: 8460245428710314383}
-  - component: {fileID: 8460245428710314382}
   m_Layer: 0
   m_Name: RespawnPlatform
   m_TagString: RespawnPlatform
@@ -106,39 +104,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.99999994}
   m_EdgeRadius: 0
---- !u!114 &8460245428710314383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460245428710314376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d7b34a3bb2d4e4b926e7e729d3d410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8460245428710314382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460245428710314376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MaxSpeed: 5.5
-  m_JumpForce: 750
-  m_CrouchSpeed: 0.36
-  m_AirControl: 0
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  respawnPoint: {x: 0, y: 0, z: 0}
-  curHealth: 200
-  maxHealth: 200
-  defense: 1
-  lives: 3

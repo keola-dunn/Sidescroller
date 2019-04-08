@@ -23,11 +23,11 @@ public class MovingWallTurret : EnemyBehaviour
         base.Awake();
         maxSpeed = 10f;
         maxDistance = 20f;
-        maxHealth = 700f;
+        maxHealth = 750f;
         curHealth = maxHealth;
         defense = 3;
         attackPower = 7f;
-        attackRate = 2f;
+        attackRate = 3f;
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -61,7 +61,7 @@ public class MovingWallTurret : EnemyBehaviour
                     if (!panicMode) {
                         timeToMove = Time.time + 10 / moveRate;
                     } else {
-                        timeToMove = Time.time + 7 / moveRate;
+                        timeToMove = Time.time + 5 / moveRate;
                     }
                     nextPosition = new Vector2(transform.position.x, initialYPosition + Random.Range(-verticalMovementRange, verticalMovementRange));
                 }
@@ -89,7 +89,7 @@ public class MovingWallTurret : EnemyBehaviour
             } else {
                 for (int i = 0; i < numShots; ++i) {
                     float shotDirection = arcAngle/2 - i*increment;
-                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 180f, shotDirection));
+                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 180f, 180f - bulletRotation)*Quaternion.Euler(0f, 0f, shotDirection));
                     generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
                 }
             }
@@ -100,7 +100,7 @@ public class MovingWallTurret : EnemyBehaviour
             } else {
                 for (int i = 0; i < numShots; ++i) {
                     float shotDirection = arcAngle/2 - i*increment;
-                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0f, 0f, shotDirection));
+                    generatedBullet = Instantiate(bulletGameObject, firePointPosition, Quaternion.Euler(0, 0, bulletRotation)*Quaternion.Euler(0f, 0f, shotDirection));
                     generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
                 }
             }

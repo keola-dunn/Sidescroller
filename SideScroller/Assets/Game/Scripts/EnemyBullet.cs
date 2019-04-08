@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyBullet : Bullet
 {
-    // Initialization
 
     public int damageScene = 0;
-    private void Awake()
+    protected override void Awake()
     {
         speed = 15f;
-        base.Awake();
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
+        rb.velocity = transform.right * speed;
+        Destroy(gameObject, 1.75f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 

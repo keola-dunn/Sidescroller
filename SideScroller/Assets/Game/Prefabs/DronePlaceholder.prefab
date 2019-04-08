@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3956498857490274183}
   - component: {fileID: 3956498857490274179}
   - component: {fileID: 6871911899401747509}
+  - component: {fileID: 722911550022938952}
   m_Layer: 10
   m_Name: DronePlaceholder
   m_TagString: Enemy
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1fddfef6e22c4c1448b708b739891f7b, type: 3}
-  m_Color: {r: 1, g: 0.89019614, b: 0.050980397, a: 1}
+  m_Sprite: {fileID: 21300008, guid: c4dbdf865b3916b40bb9e7d178a71d18, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -118,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0008802414}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.0666667, y: 1.4666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0633392, y: 1.4637318}
   m_EdgeRadius: 0
 --- !u!114 &6871911899401747509
 MonoBehaviour:
@@ -155,6 +156,25 @@ MonoBehaviour:
   currentFade: 1
   bulletGameObject: {fileID: 5091137849734604191, guid: ced6d1ba2ee5f454a8867e4000fde812,
     type: 3}
+--- !u!95 &722911550022938952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956498857490274200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dec20a794f0b0684c96cda3fde189c2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3956498858219291295
 PrefabInstance:
   m_ObjectHideFlags: 0
