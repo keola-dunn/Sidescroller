@@ -6,8 +6,7 @@ using UnityEngine;
 
 
 public class WolfBehaviorScript : EnemyBehaviour
-{
-    
+{   
 
     private new void Awake()
     {
@@ -32,10 +31,9 @@ public class WolfBehaviorScript : EnemyBehaviour
         if (curHealth <= 0)
         {
 
-            
-                m_dead = true;
-                m_Anim.SetBool("Dead", true);
-                FadeOut(0f, 80f);
+            m_dead = true;
+            m_Anim.SetBool("Dead", true);
+            FadeOut(0f, 80f);
             Destroy(gameObject, 3f);
          
         }

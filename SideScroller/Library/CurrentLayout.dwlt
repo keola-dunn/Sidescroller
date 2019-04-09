@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 12
+  controlID: 91
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 13
+  controlID: 92
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 14
+  controlID: 93
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/BayatGames/Free Platform Game Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/BayatGames/Free Platform Game Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jacob\Desktop\New folder\Sidescroller\SideScroller
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1625}
-    m_SelectedIDs: c4420000
-    m_LastClickedID: 17092
-    m_ExpandedIDs: 00000000242900001c2a0000f62a0000582b00008a2b00001a2c0000462d0000902e0000cc2f00000c3200006a330000ec330000f43300001e340000643400008c340000a4350000803800009c38000042390000443900007e390000503a0000983a0000a03b0000d23c0000703e0000d03e0000363f0000b23f000046400000f04100002c42000090420000d2420000ec530000ee530000f0530000f2530000f4530000f6530000f8530000fa530000fc530000fe53000000540000025400000454000006540000085400000a5400000c5400000e54000010540000125400001454000016540000185400001a5400001c5400001e54000020540000225400002454000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 04350000
+    m_LastClickedID: 13572
+    m_ExpandedIDs: 00000000ca290000c22a00009c2b0000fe2b0000302c0000c02c0000e82d00002e2f00006a300000aa3200000a3400008c34000094340000be340000043500002c35000044360000223900003e390000e4390000e6390000203a0000f23a00003a3b0000423c0000723d0000103f0000703f0000d63f000052400000e640000090420000cc4200002c4300006e430000825400008454000086540000885400008a5400008c5400008e54000090540000925400009454000096540000985400009a5400009c5400009e540000a0540000a2540000a4540000a6540000a8540000aa540000ac540000ae540000b0540000b2540000b4540000b6540000b8540000ba54000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000242900001c2a0000f62a0000582b00008a2b00001a2c0000462d0000902e0000cc2f00000c3200006a330000ec330000f43300001e340000643400008c340000a4350000803800009c38000042390000443900007e390000503a0000983a0000a03b0000d23c0000703e0000d03e0000363f0000b23f000046400000f04100002c42000090420000d2420000ec530000ee530000f0530000f2530000f4530000f6530000f8530000fa530000fc530000fe53000000540000025400000454000006540000085400000a5400000c5400000e54000010540000125400001454000016540000185400001a5400001c5400001e540000205400002254000024540000
+    m_ExpandedIDs: 00000000ca290000c22a00009c2b0000fe2b0000302c0000c02c0000e82d00002e2f00006a300000aa3200000a3400008c34000094340000be340000043500002c35000044360000223900003e390000e4390000e6390000203a0000f23a00003a3b0000423c0000723d0000103f0000703f0000d63f000052400000e640000090420000cc4200002c4300006e430000825400008454000086540000885400008a5400008c5400008e54000090540000925400009454000096540000985400009a5400009c5400009e540000a0540000a2540000a4540000a6540000a8540000aa540000ac540000ae540000b0540000b2540000b4540000b6540000b8540000ba540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-  m_DirectoriesAreaWidth: 237
+  m_DirectoriesAreaWidth: 115
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -498,7 +498,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d2e7ffff86e9ffffc0fbffff
+      m_ExpandedIDs: 58faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: ecc58e4bf0ba9e14baa53b2338cb1f7d
+  m_WindowGUID: 98cdc7be14d4c964183dc11662cfb89f
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -548,15 +548,15 @@ MonoBehaviour:
     width: 1138
     height: 543
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_WindowGUID: 3f8b4c77ff75b114ab9371bea0d3370a
+  m_WindowGUID: 9b59ae441dc7b42498e304ca7814f556
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -93.72755, y: 70.16235, z: -4.390409}
+    m_Target: {x: 16.551134, y: -19.856133, z: -0.74892074}
     speed: 2
-    m_Value: {x: -93.72755, y: 70.16235, z: -4.390409}
+    m_Value: {x: 16.551134, y: -19.856133, z: -0.74892074}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -588,9 +588,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 450.36084
+    m_Target: 84.87407
     speed: 2
-    m_Value: 450.36084
+    m_Value: 84.87407
   m_Ortho:
     m_Target: 1
     speed: 2
