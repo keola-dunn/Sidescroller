@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class BasicRangedSoldier : RangedSoldier
 {
+
+    public int carryOverDefense;
+    public float carryOverAttackPower;
+    public float carryOverMaxHealth;
     // Start is called before the first frame update
     void Awake()
     {
