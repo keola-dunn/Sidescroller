@@ -36,6 +36,8 @@ namespace UnityStandardAssets._2D
 
         private bool canDoubleJump = true;
 
+        private Transform m_curMovingPlatform = null;
+
         private void Awake()
         {
             // Setting up references.
@@ -234,6 +236,20 @@ namespace UnityStandardAssets._2D
             }
             
 
+        }
+
+        void OnCollisionEnter2D(Collision2D other) {
+            if (other.gameObject.tag == "MovingPlatformSurface") {
+                m_curMovingPlatform = other.gameObject.transform;
+                transform.SetParent(m_curMovingPlatform);
+            }
+        }
+
+        void OnCollisionExit2D(Collision2D other) {
+            if (other.gameObject.tag == "MovingPlatformSurface") {
+                transform.parent = null;
+                m_curMovingPlatform = null;
+            }
         }
         
         private IEnumerator PlayerDeath()
