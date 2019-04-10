@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - RespawnPlatform
   - HUD
+  - MovingPlatformSurface
   layers:
   - Default
   - TransparentFX
