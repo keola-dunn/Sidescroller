@@ -7,14 +7,15 @@ public class ZombieEnemy : EnemyBehaviour
 
     protected BoxCollider2D mBoxCollider;
     public GameObject mGameObject;
+    private bool mSwarming = false;
 
 
     // Start is called before the first frame update
     private new void Awake()
     {
         base.Awake();
-        maxSpeed = 6f;
-        maxDistance = 10f;
+        maxSpeed = 7f;
+        maxDistance = 12f;
         attackDistance = 1.5f;
         attackRate = 4f;
 
@@ -45,7 +46,7 @@ public class ZombieEnemy : EnemyBehaviour
             float range = Vector2.Distance(transform.position, Player.position);
             if (range > attackDistance && range < maxDistance)
             {
-                moveTowardsPlayer();
+                MoveTowardsPlayer();
             }
             else
             {
@@ -64,4 +65,38 @@ public class ZombieEnemy : EnemyBehaviour
             flipCheck();
         }
     }
+
+    private void MoveTowardsPlayer()
+    {
+        RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, Player.position);
+
+        Vector3 moveGoal = Player.position;
+
+        if (!FreeYMovement)
+        {
+            moveGoal.y = transform.position.y;
+        }
+        if (mSwarming && lineOfSight.collider.name.Contains("ZombieEnemy"))
+        {
+            moveGoal.y = Player.position.y + 4;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, moveGoal, maxSpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name.Contains("ZombieEnemy"))
+        {
+            mSwarming = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains("ZombieEnemy"))
+        {
+            mSwarming = false;
+        }
+    }
+
 }

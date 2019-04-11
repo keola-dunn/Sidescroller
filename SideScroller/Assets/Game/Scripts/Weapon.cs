@@ -194,7 +194,7 @@ namespace Wep {
 
         public void SetAmmoText()
         {
-            SetAmmoText(currentAmmo, clipCount * clipSize, clipSize == 10);
+            SetAmmoText(currentAmmo, clipCount * clipSize, clipSize == 12);
         }
 
         protected void SetReloadingText()
