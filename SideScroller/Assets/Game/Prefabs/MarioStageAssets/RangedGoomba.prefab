@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010599136, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0635986, y: 1.0635986}
   m_EdgeRadius: 0
 --- !u!114 &7729916781823098203
 MonoBehaviour:
@@ -145,17 +145,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5091137849734604191, guid: ced6d1ba2ee5f454a8867e4000fde812,
     type: 3}
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &7581414290018687033
 Animator:
   serializedVersion: 3
@@ -312,6 +320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 5477169180343748031, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1058058983963143789, guid: 16d1a8a01ed8833449f7298c374e109d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,6 +389,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039194164226069803, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1339933823519181134, guid: 16d1a8a01ed8833449f7298c374e109d,
         type: 3}

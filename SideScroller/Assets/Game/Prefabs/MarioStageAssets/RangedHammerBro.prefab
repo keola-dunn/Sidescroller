@@ -156,7 +156,7 @@ MonoBehaviour:
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
-  bulletGameObject: {fileID: 5091137849734604191, guid: ced6d1ba2ee5f454a8867e4000fde812,
+  bulletGameObject: {fileID: 7261980820616988345, guid: 451f3d48ba5e81e4cabab339319a6bbb,
     type: 3}
   isStationary: 0
   toHit:
@@ -220,7 +220,28 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1339933823519181134, guid: 16d1a8a01ed8833449f7298c374e109d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16d1a8a01ed8833449f7298c374e109d, type: 3}
 --- !u!4 &215970676688766089 stripped
 Transform:

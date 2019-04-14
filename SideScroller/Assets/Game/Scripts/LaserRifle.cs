@@ -69,7 +69,7 @@ namespace Wep {
             }
             laser.enabled = true;
             SetAmmoText(currentAmmo, clipSize * clipCount, false);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
             laser.enabled = false;
         }
 

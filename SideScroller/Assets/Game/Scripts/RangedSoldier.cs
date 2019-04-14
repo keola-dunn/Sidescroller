@@ -54,6 +54,7 @@ public class RangedSoldier : EnemyBehaviour
             boxCollider.isTrigger = true;
             m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
+            weaponFade(0, 25f);
             Destroy(gameObject, 1f);
         } else {
             float range = Vector2.Distance(transform.position, Player.position);
@@ -84,6 +85,7 @@ public class RangedSoldier : EnemyBehaviour
             boxCollider.isTrigger = true;
             m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
+            weaponFade(0, 25f);
             Destroy(gameObject, 1f);
         } else {
             float range = Vector2.Distance(transform.position, Player.position);
@@ -114,6 +116,7 @@ public class RangedSoldier : EnemyBehaviour
             boxCollider.isTrigger = true;
             m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
+            weaponFade(0, 25f);
             Destroy(gameObject, 1f);
         } else {
             if (Time.time > timeToMove) {
@@ -162,5 +165,14 @@ public class RangedSoldier : EnemyBehaviour
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         GameObject generatedBullet = Instantiate(bulletGameObject, firePointPosition, weapon.rotation);
         generatedBullet.GetComponent<Bullet>().setDamage(attackPower);
+    }
+
+    protected void weaponFade(float fadeGoal, float timeToFade)
+    {
+        if (currentFade > fadeGoal)
+        {
+            currentFade = currentFade - ((currentFade - fadeGoal) / timeToFade);
+            weapon.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentFade);
+        }
     }
 }

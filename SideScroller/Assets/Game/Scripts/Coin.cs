@@ -28,7 +28,6 @@ public class Coin : MonoBehaviour
         float timeToWait = Time.time + 0.5f;
         while (true) {
             if (Time.time > timeToWait) {
-                Debug.Log("Here");
                 break;
             }
             yield return null;
