@@ -10,6 +10,7 @@ TagManager:
   - RespawnPlatform
   - HUD
   - MovingPlatformSurface
+  - Coin
   layers:
   - Default
   - TransparentFX

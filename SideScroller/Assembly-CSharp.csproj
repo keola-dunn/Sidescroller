@@ -65,6 +65,8 @@
      <Compile Include="Assets\Game\Scripts\Bullet.cs" />
      <Compile Include="Assets\Game\Scripts\BulletExplosion.cs" />
      <Compile Include="Assets\Game\Scripts\CheckpointController.cs" />
+     <Compile Include="Assets\Game\Scripts\Coin.cs" />
+     <Compile Include="Assets\Game\Scripts\CoinBlock.cs" />
      <Compile Include="Assets\Game\Scripts\Drone.cs" />
      <Compile Include="Assets\Game\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Game\Scripts\EnemyBullet.cs" />
@@ -92,8 +94,8 @@
      <Compile Include="Assets\Game\Scripts\ShotgunAmmo.cs" />
      <Compile Include="Assets\Game\Scripts\StandardBullet.cs" />
      <Compile Include="Assets\Game\Scripts\StandardRocket.cs" />
-     <Compile Include="Assets\Game\Scripts\StationaryTurret.cs" />
      <Compile Include="Assets\Game\Scripts\StrongerRangedSoldier.cs" />
+     <Compile Include="Assets\Game\Scripts\TeleportPlayer.cs" />
      <Compile Include="Assets\Game\Scripts\TogglingPlatform.cs" />
      <Compile Include="Assets\Game\Scripts\Weapon.cs" />
      <Compile Include="Assets\Game\Scripts\WeaponSwitching.cs" />
