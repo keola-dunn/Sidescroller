@@ -5,17 +5,20 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     private Vector2 origin;
-    public Transform destinationObj;
+    private Transform destination;
     private Vector2 dest;
     public float speed;
     public float waitTime;
     private float timeToMove;
+    public float startDelay;
 
     // Initialization
     private void Awake()
     {
+        destination = transform.Find("Destination");
         origin = transform.position;
-        dest = destinationObj.position;
+        dest = destination.position;
+        timeToMove = Time.time + startDelay;
     }
 
     // Update is called once per frame

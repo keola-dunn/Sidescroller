@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
     protected EnemyHealthBar mHealthBar;
 
     //Max Speed of Enemy 
-    protected float maxSpeed;
+    public float maxSpeed;
 
     //Distance from which the enemy shall begin following player
     public float maxDistance;
@@ -32,7 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float attackPower;
     protected float timeToFire;
-    protected float attackRate;
+    public float attackRate;
 
 
     protected bool m_FacingRight;

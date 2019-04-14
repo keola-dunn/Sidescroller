@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4459722344098945044}
   m_Layer: 0
-  m_Name: destionationObject
+  m_Name: Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459722344098945051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 115.61328}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7844147088975976762}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4576781018227209884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4459722342777618272}
@@ -208,6 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9617c31bca836824c9555fd7aec3a2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationObj: {fileID: 4459722344098945044}
   speed: 3
   waitTime: 0
+  startDelay: 0

@@ -10,6 +10,7 @@ TagManager:
   - RespawnPlatform
   - HUD
   - MovingPlatformSurface
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -53,14 +54,14 @@ TagManager:
   - name: SolidPlatform
     uniqueID: 2960257255
     locked: 0
-  - name: GhostPlatform
-    uniqueID: 635613563
-    locked: 0
   - name: Enemy
     uniqueID: 3253918561
     locked: 0
   - name: Player
     uniqueID: 1500790617
+    locked: 0
+  - name: GhostPlatform
+    uniqueID: 635613563
     locked: 0
   - name: ForeGround
     uniqueID: 3772114951

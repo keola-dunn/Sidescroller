@@ -11,7 +11,7 @@ namespace Wep {
         public float fireRate;
         public float damageMultiplier;
         public int clipSize;
-        public int clipCount = 50;
+        public int clipCount;
         public float reloadTime;
         protected int currentAmmo;
         protected bool isReloading = false;
@@ -38,7 +38,7 @@ namespace Wep {
             SetAmmoText(currentAmmo, clipCount * clipSize, false);
         }
 
-        protected void Update() 
+        protected virtual void Update() 
         {
             // Rotate the weapon towards the mouse and account for flip
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
