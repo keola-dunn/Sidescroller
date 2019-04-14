@@ -9,7 +9,7 @@ public class BasicRangedSoldier : RangedSoldier
     {
         maxSpeed = 4f;
         maxDistance = 16f;
-        attackDistance = 8f;
+        attackDistance = 12f;
 
         maxHealth = 60f;
         defense = 2;
