@@ -10,12 +10,14 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public float waitTime;
     private float timeToMove;
+    public float startDelay;
 
     // Initialization
     private void Awake()
     {
         origin = transform.position;
         dest = destinationObj.position;
+        timeToMove = Time.time + startDelay;
     }
 
     // Update is called once per frame

@@ -10,11 +10,12 @@ public class TogglingPlatform : MonoBehaviour
     private float timeToChange;
     private bool isSolid;
     private BoxCollider2D collider;
+    public float startDelay;
 
     // Initialization
     private void Awake() 
     {
-        timeToChange = Time.time + solidTime;
+        timeToChange = Time.time + solidTime + startDelay;
         collider = GetComponent<BoxCollider2D>();
     }
 

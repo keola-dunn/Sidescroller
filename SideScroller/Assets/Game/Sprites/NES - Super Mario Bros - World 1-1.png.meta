@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: cd6c72b2f415079468ee9785890dd16a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: World1Background
+    21300000: World1_1Background
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -85,12 +85,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: World1Background
+      name: World1_1Background
       rect:
         serializedVersion: 2
         x: 0
         y: 243
-        width: 3392
+        width: 3152
         height: 217
       alignment: 6
       pivot: {x: 0, y: 0}
