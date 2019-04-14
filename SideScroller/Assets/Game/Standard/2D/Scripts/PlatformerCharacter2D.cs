@@ -315,6 +315,7 @@ namespace UnityStandardAssets._2D
             }
             else if (other.tag.Equals("Finish"))
             {
+                //EndLevelIndicator Logic
                
                 GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
