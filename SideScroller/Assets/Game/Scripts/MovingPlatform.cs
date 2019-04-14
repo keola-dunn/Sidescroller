@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     private Vector2 origin;
-    public Transform destinationObj;
+    private Transform destination;
     private Vector2 dest;
     public float speed;
     public float waitTime;
@@ -15,8 +15,9 @@ public class MovingPlatform : MonoBehaviour
     // Initialization
     private void Awake()
     {
+        destination = transform.Find("Destination");
         origin = transform.position;
-        dest = destinationObj.position;
+        dest = destination.position;
         timeToMove = Time.time + startDelay;
     }
 
