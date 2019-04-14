@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7729916781823098203}
   - component: {fileID: 7581414290018687033}
   m_Layer: 10
-  m_Name: RangedEnemyPlaceholder
+  m_Name: RangedGoomba
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

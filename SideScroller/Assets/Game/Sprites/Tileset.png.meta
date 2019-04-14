@@ -10,6 +10,12 @@ TextureImporter:
     21300010: GrassyTopRight
     21300012: GrassyTopMiddle
     21300014: CloudPlatform1
+    21300016: Floor2
+    21300018: GreenSidePipe
+    21300020: GreenSidePipeBase
+    21300022: CloudFloorLeft
+    21300024: CloudFloorMiddle
+    21300026: CloudFloorRight
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -253,13 +259,148 @@ TextureImporter:
         width: 48
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 61cda141e5de80241afe7154310e1fa5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a4713600a173a4aa49fd0b287d13e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenSidePipe
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 288
+        width: 47
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b31f6c2266a4541b9e3f05360d9c7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenSidePipeBase
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 288
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476ce89d6e549d445853fb11f37bb105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloudFloorLeft
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 208
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: -7.5}
+        - {x: -8, y: -5.5}
+        - {x: -8, y: 5.5}
+        - {x: -7, y: 7.5}
+        - {x: 8, y: 7.5}
+        - {x: 8, y: -5.5}
+        - {x: 6, y: -7.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aed06f5b39b9c24290689caf587ed44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloudFloorMiddle
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295805cdafc95db46b1a2122ce9045af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloudFloorRight
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 208
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -7.5}
+        - {x: -8, y: -6.5}
+        - {x: -8, y: 7.5}
+        - {x: 6, y: 7.5}
+        - {x: 7, y: 6.5}
+        - {x: 8, y: 4.5}
+        - {x: 8, y: -5.5}
+        - {x: 6, y: -7.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53595c4206f64724780c5b2ca9944b35
       vertices: []
       indices: 
       edges: []

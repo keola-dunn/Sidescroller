@@ -3,6 +3,7 @@ guid: 2b63c052dc5c62f469351a17ea5397c1
 TextureImporter:
   fileIDToRecycleName:
     21300000: World5_3Background
+    21300002: TreeTrunk
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,7 +89,7 @@ TextureImporter:
       name: World5_3Background
       rect:
         serializedVersion: 2
-        x: 264
+        x: 265
         y: 81
         width: 2155
         height: 212

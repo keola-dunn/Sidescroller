@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
         isActive = true;
         while (true) {
             transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + 4f * Time.deltaTime);
-            if (transform.localPosition.y >= originalPosition.y + 2f) {
+            if (transform.localPosition.y >= originalPosition.y + 1.5f) {
                 break;
             }
             yield return null;
