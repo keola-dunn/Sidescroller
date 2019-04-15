@@ -31,6 +31,7 @@ public class PiranhaPlant : EnemyBehaviour
         if (curHealth <= 0) {
             m_dead = true;
             boxCollider.isTrigger = true;
+            gameObject.layer = 2;
             FadeOut(0, 25f);
             Destroy(gameObject, 1f);
         } else {

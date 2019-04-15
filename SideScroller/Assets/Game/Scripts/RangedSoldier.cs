@@ -9,6 +9,7 @@ public class RangedSoldier : EnemyBehaviour
     protected Transform firePoint;
     protected Transform weapon;
     public GameObject bulletGameObject;
+    public bool shootAndMove;
     public bool isStationary;
     public LayerMask toHit;
     public bool isOscillating;
@@ -52,7 +53,8 @@ public class RangedSoldier : EnemyBehaviour
         if (curHealth <= 0) {
             m_dead = true;
             boxCollider.isTrigger = true;
-            m_Rigidbody2D.velocity = Vector2.zero;
+            gameObject.layer = 2;
+            m_Rigidbody2D.gravityScale = 0;
             FadeOut(0, 25f);
             weaponFade(0, 25f);
             Destroy(gameObject, 1f);
@@ -65,6 +67,7 @@ public class RangedSoldier : EnemyBehaviour
                 
                 if (range <= attackDistance)
                 {
+                    if (shootAndMove) transform.position = Vector2.MoveTowards(transform.position, Player.position, maxSpeed/2 * Time.deltaTime);
                     rotateWeapon();
                     if (Time.time > timeToFire)
                     {
@@ -83,7 +86,8 @@ public class RangedSoldier : EnemyBehaviour
         if (curHealth <= 0) {
             m_dead = true;
             boxCollider.isTrigger = true;
-            m_Rigidbody2D.velocity = Vector2.zero;
+            gameObject.layer = 2;
+            m_Rigidbody2D.gravityScale = 0;
             FadeOut(0, 25f);
             weaponFade(0, 25f);
             Destroy(gameObject, 1f);
@@ -114,7 +118,8 @@ public class RangedSoldier : EnemyBehaviour
         if (curHealth <= 0) {
             m_dead = true;
             boxCollider.isTrigger = true;
-            m_Rigidbody2D.velocity = Vector2.zero;
+            gameObject.layer = 2;
+            m_Rigidbody2D.gravityScale = 0;
             FadeOut(0, 25f);
             weaponFade(0, 25f);
             Destroy(gameObject, 1f);

@@ -6,39 +6,32 @@ public class MovingWallTurret : EnemyBehaviour
 {
     private BoxCollider2D boxCollider;
     private Transform firePoint;
-    private float initialYPosition;
     public GameObject bulletGameObject;
-    public float verticalMovementRange;
-    public float timeToMove;
-    public float moveRate;
+    public float waitTime;
+    private float timeToMove;
+    private bool inside;
+    private Vector2 dest;
+    private Vector2 origin;
     public bool panicMode;
     public int numShots;
     public float arcAngle;
     private float increment;
-    private Vector2 nextPosition;
+    public Transform[] entrances;
 
     // Initialization
     protected void Awake()
     {
         base.Awake();
-        maxSpeed = 10f;
-        maxDistance = 20f;
-        maxHealth = 750f;
         curHealth = maxHealth;
-        defense = 3;
-        attackPower = 7f;
-        attackRate = 3f;
         m_FacingRight = true;
         mHealthBar = this.transform.Find("EnemyHealthCanvas").GetComponent<EnemyHealthBar>();
         boxCollider = GetComponent<BoxCollider2D>();
         firePoint = transform.Find("FirePoint");
-        initialYPosition = transform.position.y;
-        verticalMovementRange = 6;
-        moveRate = 4f;
         panicMode = false;
-        numShots = 3;
-        arcAngle = 15f;
         increment = arcAngle/numShots;
+        origin = transform.position;
+        dest = new Vector2(transform.position.x - 2.2f, transform.position.y);
+        inside = true;
     }
 
     // Update is called once per frame
@@ -47,30 +40,46 @@ public class MovingWallTurret : EnemyBehaviour
         if (curHealth <= 0) {
             boxCollider.isTrigger = true;
             m_dead = true;
-            FadeOut(0, 25f);
+            if (currentFade > 0) {
+                currentFade = currentFade - (currentFade / 25f);
+                foreach (Transform child in transform.parent) {
+                    child.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentFade);
+                }
+            }
             Destroy(transform.parent.gameObject, 1f);
         } else {
             float range = Vector2.Distance(transform.position, Player.position);
-            if (curHealth <= maxHealth/2) {
-                panicMode = true;
-                attackRate = 3f;
-            }
             if (range <= maxDistance)
             {
+                if (!panicMode && curHealth <= maxHealth/2) {
+                    panicMode = true;
+                    attackRate *= 2.5f;
+                    maxSpeed *= 2f;
+                    waitTime /= 2f;
+                    defense *= 1.5f;
+                }
                 if (Time.time > timeToMove) {
-                    if (!panicMode) {
-                        timeToMove = Time.time + 10 / moveRate;
-                    } else {
-                        timeToMove = Time.time + 5 / moveRate;
+                    if (Vector2.Distance(transform.position, dest) <= 0.01) {
+                        inside = !inside;
+                        if (inside) {
+                            transform.position = entrances[Random.Range(0, entrances.Length)].position;
+                            origin = transform.position;
+                            dest = new Vector2(transform.position.x - 2.2f, transform.position.y);
+                        } else {
+                            Vector2 temp = origin;
+                            origin = dest;
+                            dest = temp;
+                            timeToMove = Time.time + waitTime;
+                        }
                     }
-                    nextPosition = new Vector2(transform.position.x, initialYPosition + Random.Range(-verticalMovementRange, verticalMovementRange));
+                    transform.position = Vector2.MoveTowards(transform.position, dest, maxSpeed * Time.deltaTime);
+                } else {
+                    if (Time.time > timeToFire) {
+                        timeToFire = Time.time + 1 / attackRate;
+                        Attack();
+                    }
                 }
-                transform.position = Vector2.MoveTowards(transform.position, nextPosition, maxSpeed * Time.deltaTime);
-                if (Time.time > timeToFire) {
-                    timeToFire = Time.time + 1 / attackRate;
-                    Attack();
-                }
-                    
+                
             }
         }
     }

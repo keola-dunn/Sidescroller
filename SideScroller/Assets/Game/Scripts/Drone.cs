@@ -8,9 +8,9 @@ public class Drone : RangedSoldier
     // Initialization
     protected override void Awake()
     {
-        maxSpeed = 5.5f;
+        maxSpeed = 6.5f;
         maxDistance = 20f;
-        attackDistance = 12f;
+        attackDistance = 16f;
 
         maxHealth = 35f;
         defense = 2;
@@ -27,6 +27,7 @@ public class Drone : RangedSoldier
         if (curHealth <= 0) {
             m_dead = true;
             boxCollider.isTrigger = true;
+            gameObject.layer = 2;
             m_Rigidbody2D.velocity = Vector2.zero;
             FadeOut(0, 25f);
             Destroy(gameObject, 1f);

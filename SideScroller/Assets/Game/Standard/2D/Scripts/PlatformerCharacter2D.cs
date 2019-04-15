@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Wep;
 
 namespace UnityStandardAssets._2D
 {
@@ -33,7 +34,8 @@ namespace UnityStandardAssets._2D
         private HealthBar healthBar;
         public float lives = 3;
         private LifeCount lifeDisplay;
-
+        private bool mDead = false;
+        
         private bool canDoubleJump = true;
 
         private Transform m_curMovingPlatform = null;
@@ -178,14 +180,16 @@ namespace UnityStandardAssets._2D
             }
             else if (curHealth <= 0)
             {
+
                 //Handle death events here
-                //PlayerDeath();
-                StartCoroutine("PlayerDeath");
+                mDead = true;
+                // PlayerDeath();
+                
 
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
-                lifeDisplay.Die();
+                // lifeDisplay.Die();
             }
             else
             {
@@ -210,6 +214,93 @@ namespace UnityStandardAssets._2D
             healthBar.ChangeHealth(curHealth, maxHealth);
         }
 
+        public void AddAmmo(bool[] ammoType)
+        {
+            //0 = bullet
+            //1 = shotgun
+            //2 = rocket
+
+            bool hadToEnableWeapon = false;
+            if (ammoType[0])
+            {
+                //rifle ammo
+
+                GameObject rifleObject = gameObject.transform.Find("RifleA").gameObject;
+                Rifle rifle = gameObject.GetComponentInChildren<Rifle>();
+
+                if (rifle == null)
+                {
+                    rifleObject.SetActive(true);
+                    rifle = rifleObject.GetComponent<Rifle>();
+                    hadToEnableWeapon = true;
+                }
+
+                rifle.clipCount = rifle.clipCount + 2;
+
+                
+                if (hadToEnableWeapon)
+                {
+                    rifleObject.SetActive(false);
+                }
+                else
+                {
+                    rifle.SetAmmoText();
+                }
+            }
+            else if (ammoType[1])
+            {
+                //shotgun ammo
+                GameObject shotgunObject = gameObject.transform.Find("ShotgunA").gameObject;
+                Shotgun shotgun = gameObject.GetComponentInChildren<Shotgun>();
+
+                if (shotgun == null)
+                {
+                    shotgunObject.SetActive(true);
+                    shotgun = shotgunObject.GetComponent<Shotgun>();
+                    hadToEnableWeapon = true;
+                }
+
+                shotgun.clipCount = shotgun.clipCount + 2;
+
+
+                if (hadToEnableWeapon)
+                {
+                    shotgunObject.SetActive(false);
+                }
+                else
+                {
+                    shotgun.SetAmmoText();
+                }
+            }
+            else if (ammoType[2])
+            {
+                //rocket ammo
+                GameObject RLObject = gameObject.transform.Find("RocketLauncher").gameObject;
+                RocketLauncher rocketLauncher = gameObject.GetComponentInChildren<RocketLauncher>();
+
+                if (rocketLauncher == null)
+                {
+                    RLObject.SetActive(true);
+                    rocketLauncher = RLObject.GetComponent<RocketLauncher>();
+                    hadToEnableWeapon = true;
+                }
+
+                rocketLauncher.clipCount = rocketLauncher.clipCount + 2;
+
+
+                if (hadToEnableWeapon)
+                {
+                    RLObject.SetActive(false);
+                }
+                else
+                {
+                    rocketLauncher.SetAmmoText();
+                }
+            }
+            
+
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "RespawnPlatform")
@@ -224,6 +315,7 @@ namespace UnityStandardAssets._2D
             }
             else if (other.tag.Equals("Finish"))
             {
+                //EndLevelIndicator Logic
                
                 GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
@@ -252,28 +344,46 @@ namespace UnityStandardAssets._2D
             }
         }
         
-        private IEnumerator PlayerDeath()
+        private void PlayerDeath()
         {
-            var deathHud = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
-            var deathText = deathHud.GetChild(0);
-            Color deathHudColor = deathHud.GetComponent<Image>().color;
-            Color deathTextColor = deathText.GetComponent<Text>().color;
+            Transform deathScreen = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
+            var deathText = deathScreen.GetChild(0);
+            StartCoroutine(FadeInDeath(deathScreen, deathText, 1f, 5f));
+            //StartCoroutine(FadeInDeath(deathScreen, deathText, 1f, 5f));
+            //Time.timeScale = 0.5f;
+        }
 
-            for(int i = 0; i<256; ++i)
+
+        IEnumerator FadeInDeath(Transform material1, Transform material2, float targetOpacity, float duration)
+        {
+            // Cache the current color of the material, and its initiql opacity.
+            Color color1 = material1.GetComponent<Image>().color;
+            Color color2 = material2.GetComponent<Text>().color;
+            float startOpacity1 = color1.a;
+            float startOpacity2 = startOpacity1;
+
+            // Track how many seconds we've been fading.
+            float t = 0;
+
+            while (t < duration)
             {
-                deathHudColor.a = (i / 255);
-                deathHud.GetComponent<Image>().color = deathHudColor;
-                deathTextColor.a = (i / 255);
-                deathText.GetComponent<Text>().color = deathTextColor;
-                yield return new WaitForSeconds(2f);
+                // Step the fade forward one frame.
+                t += Time.deltaTime;
+                // Turn the time into an interpolation factor between 0 and 1.
+                float blend = Mathf.Clamp01(t / duration);
+
+                // Blend to the corresponding opacity between start & target.
+                color1.a = Mathf.Lerp(startOpacity1, targetOpacity, blend);
+                color2.a = Mathf.Lerp(startOpacity2, targetOpacity, blend);
+
+                // Apply the resulting color to the material.
+                material1.GetComponent<Image>().color = color1;
+                material2.GetComponent<Text>().color = color2;
+
+
+                // Wait one frame, and repeat.
+                yield return null;
             }
-
-            deathHudColor.a = 0;
-            deathTextColor.a = 0;
-
-            deathHud.GetComponent<Image>().color = deathHudColor;
-            deathText.GetComponent<Text>().color = deathTextColor;
-
         }
 
         /*
