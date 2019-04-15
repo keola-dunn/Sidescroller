@@ -55,7 +55,7 @@ namespace Wep {
             Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
             Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
             Vector2 diff = mousePosition - firePointPosition;
-            RaycastHit2D hitInfo = Physics2D.Raycast(firePointPosition, diff, 15f, toHit);
+            RaycastHit2D hitInfo = Physics2D.Raycast(firePointPosition, diff, 17f, toHit);
             if (hitInfo) {
                 if (hitInfo.transform.gameObject.tag == "Enemy") {
                     float[] array = { damage, 1f };
@@ -65,7 +65,7 @@ namespace Wep {
                 laser.SetPosition(1, hitInfo.point);
             } else {
                 laser.SetPosition(0, firePointPosition);
-                laser.SetPosition(1, firePointPosition + 15*diff.normalized);
+                laser.SetPosition(1, firePointPosition + 17*diff.normalized);
             }
             laser.enabled = true;
             SetAmmoText(currentAmmo, clipSize * clipCount, false);

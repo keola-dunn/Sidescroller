@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4dbdf865b3916b40bb9e7d178a71d18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3411428665402749618}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   currentFade: 1
   bulletGameObject: {fileID: 5091137849734604191, guid: ced6d1ba2ee5f454a8867e4000fde812,
     type: 3}
+  shootAndMove: 0
   isStationary: 1
   toHit:
     serializedVersion: 2
@@ -390,26 +391,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1788560712563926629, guid: 16d1a8a01ed8833449f7298c374e109d,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2039194164226069803, guid: 16d1a8a01ed8833449f7298c374e109d,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339933823519181134, guid: 16d1a8a01ed8833449f7298c374e109d,
-        type: 3}
-      propertyPath: bulletGameObject
-      value: 
-      objectReference: {fileID: 5091137849734604191, guid: ced6d1ba2ee5f454a8867e4000fde812,
-        type: 3}
-    - target: {fileID: 1339933823519181134, guid: 16d1a8a01ed8833449f7298c374e109d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1339933823519181134, guid: 16d1a8a01ed8833449f7298c374e109d, type: 3}

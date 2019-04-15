@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3153295077098609351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3228124905452485871}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.499, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4480744336864053161}
@@ -41,8 +41,8 @@ GameObject:
   - component: {fileID: 4480744336864053161}
   - component: {fileID: 2905393830662442913}
   - component: {fileID: 3746881055717020108}
-  m_Layer: 0
-  m_Name: RifleB
+  m_Layer: 8
+  m_Name: LaserRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300008, guid: 1641ea8234abe044fb9ec1b2389ddc3c, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 1641ea8234abe044fb9ec1b2389ddc3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,6 +146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedLaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500021767592563804, guid: 39de77d9d4e610b4a84faf05f8719c3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4571392092674994673, guid: 39de77d9d4e610b4a84faf05f8719c3b,
         type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964404087870714627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,8 +41,8 @@ GameObject:
   - component: {fileID: 1058058983963143789}
   - component: {fileID: 1788560712563926629}
   - component: {fileID: 1339933823519181134}
-  m_Layer: 0
-  m_Name: RifleA
+  m_Layer: 8
+  m_Name: StandardRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

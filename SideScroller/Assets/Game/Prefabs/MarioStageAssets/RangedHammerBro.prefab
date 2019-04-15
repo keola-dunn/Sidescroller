@@ -158,6 +158,7 @@ MonoBehaviour:
   currentFade: 1
   bulletGameObject: {fileID: 7261980820616988345, guid: 451f3d48ba5e81e4cabab339319a6bbb,
     type: 3}
+  shootAndMove: 0
   isStationary: 0
   toHit:
     serializedVersion: 2

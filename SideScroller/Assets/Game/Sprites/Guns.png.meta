@@ -3,10 +3,14 @@ guid: 1641ea8234abe044fb9ec1b2389ddc3c
 TextureImporter:
   fileIDToRecycleName:
     21300000: RocketLauncher
-    21300002: PistolA
+    21300002: Pistol1
     21300004: Rocket
-    21300006: ShotgunA
-    21300008: RifleA
+    21300006: Shotgun1
+    21300008: Rifle1
+    21300010: BackwardsGun
+    21300012: SniperRifle2
+    21300014: SniperRifle1
+    21300016: Rifle2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -117,7 +121,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolA
+      name: Pistol1
       rect:
         serializedVersion: 2
         x: 28
@@ -157,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShotgunA
+      name: Shotgun1
       rect:
         serializedVersion: 2
         x: 138
@@ -177,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleA
+      name: Rifle1
       rect:
         serializedVersion: 2
         x: 5
@@ -197,6 +201,92 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9525927c1523b9949aa640c9c76f6eda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackwardsGun
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 8
+        width: 45
+        height: 30
+      alignment: 9
+      pivot: {x: -0.4, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a4f0eb621cc944799633269c2c2fda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SniperRifle2
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 191
+        width: 139
+        height: 30
+      alignment: 9
+      pivot: {x: 0.17, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.262329, y: -15}
+        - {x: -69, y: -15}
+        - {x: -69, y: 1}
+        - {x: -46, y: 15}
+        - {x: 69.5, y: 8}
+        - {x: 69.5, y: -4}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504541c56eecb5f4bb06a4917c39e377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SniperRifle1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 280
+        width: 142
+        height: 27
+      alignment: 9
+      pivot: {x: 0.22, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e9c21f5399a6e47b3e564faeb94180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 204
+        width: 136
+        height: 30
+      alignment: 9
+      pivot: {x: 0.2, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c396849e2fba61d45a1576e991203162
       vertices: []
       indices: 
       edges: []

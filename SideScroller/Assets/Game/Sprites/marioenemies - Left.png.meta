@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 6a32886d8e34bb44ab5ce9208d5332a7
+guid: 86e285e4ae4c98947baf96deebc8bb05
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PiranhaPlant1
+    21300000: BluePiranhaPlant1
+    21300002: BluePiranhaPlant2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -85,11 +86,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PiranhaPlant1
+      name: BluePiranhaPlant1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 192
+        x: 60
+        y: 420
         width: 23
         height: 16
       alignment: 0
@@ -99,7 +100,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e2dde39ad31bc44ab18d4671aca7233
+      spriteID: ab05c534783c0b04e933ca7c435d230f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BluePiranhaPlant2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 390
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3efd167553b504788ee8746631da61
       vertices: []
       indices: 
       edges: []
@@ -107,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f33b805d17c71c946a9f8119e80d1f20
+    spriteID: aee6898d5f7b86549b9178ca2a8e09f8
     vertices: []
     indices: 
     edges: []

@@ -183,13 +183,13 @@ namespace UnityStandardAssets._2D
 
                 //Handle death events here
                 mDead = true;
-                PlayerDeath();
+                // PlayerDeath();
                 
 
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
-                lifeDisplay.Die();
+                // lifeDisplay.Die();
             }
             else
             {

@@ -11,6 +11,7 @@ TagManager:
   - HUD
   - MovingPlatformSurface
   - Coin
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: SolidPlatform
     uniqueID: 2960257255
+    locked: 0
+  - name: Ignore Raycast
+    uniqueID: 3383934167
     locked: 0
   - name: Enemy
     uniqueID: 3253918561

@@ -3,6 +3,8 @@ guid: e43985596e092704186292cd72c7a857
 TextureImporter:
   fileIDToRecycleName:
     21300000: Coin1
+    21300002: Flag
+    21300004: CheckpointSetFlag
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -100,6 +102,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b1870f825dd91ac46b0b204b4b83aaf6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flag
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 320
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc4f7da7f047cc47adca4e22c48ed80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CheckpointSetFlag
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 304
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b928033e03c06714bbac42ade6ed57d9
       vertices: []
       indices: 
       edges: []
