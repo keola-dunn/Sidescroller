@@ -7314,17 +7314,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -13367,17 +13376,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -13933,17 +13951,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &248324578
 Animator:
   serializedVersion: 3
@@ -17080,17 +17107,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &303364416
 Animator:
   serializedVersion: 3
@@ -19135,17 +19171,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -20637,17 +20682,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &378502884
 Animator:
   serializedVersion: 3
@@ -21501,17 +21555,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -22313,17 +22376,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &404208840
 Animator:
   serializedVersion: 3
@@ -31173,17 +31245,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -33384,17 +33465,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &634753827
 Animator:
   serializedVersion: 3
@@ -36807,17 +36897,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &685142830
 Animator:
   serializedVersion: 3
@@ -45041,17 +45140,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -48678,17 +48786,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -58831,17 +58948,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -74157,17 +74283,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &1348292810
 Animator:
   serializedVersion: 3
@@ -81976,17 +82111,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -85812,17 +85956,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -89262,17 +89415,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &1620006981
 Animator:
   serializedVersion: 3
@@ -89996,17 +90158,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -91056,17 +91227,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -92114,6 +92294,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1951755093}
+    - target: {fileID: 9167778585980877904, guid: 39bc27b00d5a9f245902a33276f7a4a4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167778586475990359, guid: 39bc27b00d5a9f245902a33276f7a4a4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bc27b00d5a9f245902a33276f7a4a4, type: 3}
 --- !u!4 &1682221101 stripped
@@ -99111,17 +99301,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -101694,17 +101893,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &1873014553
 Animator:
   serializedVersion: 3
@@ -103625,17 +103833,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -105080,17 +105297,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -111525,17 +111751,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
@@ -112481,17 +112716,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 1
   currentFade: 1
   bulletGameObject: {fileID: 2268697153939436942, guid: 0f042a8d87303a04c9831ec1a3536169,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
 --- !u!95 &2069853393
 Animator:
   serializedVersion: 3
@@ -117416,17 +117660,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 293218482}
+  maxSpeed: 0
   maxDistance: 0
   attackDistance: 0
   maxHealth: 0
   curHealth: 0
   defense: 0
   attackPower: 0
+  attackRate: 0
   m_dead: 0
   FreeYMovement: 0
   currentFade: 1
   bulletGameObject: {fileID: 5071295532753971368, guid: 0d293eb356d481647989adde3a9d062c,
     type: 3}
+  shootAndMove: 0
+  isStationary: 0
+  toHit:
+    serializedVersion: 2
+    m_Bits: 0
+  isOscillating: 0
+  waitTime: 0
   carryOverDefense: 0
   carryOverAttackPower: 0
   carryOverMaxHealth: 0
