@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class StrongerRangedSoldier : RangedSoldier
 {
-    // Start is called before the first frame update
-    void Awake()
+    // Initialization
+    protected override void Awake()
     {
-        base.Awake();
-        maxSpeed = 5f;
-        maxDistance = 14f;
-        attackDistance = 8f;
+        maxSpeed = 5.5f;
+        maxDistance = 18f;
+        attackDistance = 14f;
 
-        maxHealth = 100f;
-        curHealth = maxHealth;
+        maxHealth = 140f;
         defense = 2;
         attackPower = 8f;
         attackRate = 2f;
+        isStationary = false;
+        isOscillating = false;
+        base.Awake();
     }
 }

@@ -7,6 +7,13 @@ TextureImporter:
     21300004: PiranhaPlant1
     21300006: FlyingKoopa2
     21300008: FlyingKoopa1
+    21300010: HammerBro1
+    21300012: HammerBro2
+    21300014: PiranhaPlant2
+    21300016: Hammer1
+    21300018: Hammer2
+    21300020: Hammer3
+    21300022: Hammer4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -129,26 +136,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiranhaPlant1
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 16
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dcf48fc70d740d4cb42524182819cba
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FlyingKoopa2
       rect:
         serializedVersion: 2
@@ -157,9 +144,13 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -8, y: -11}
+        - {x: -8, y: 11}
+        - {x: 8, y: 11}
+        - {x: 8, y: -11}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -177,13 +168,189 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 0}
+        - {x: -8, y: 11}
+        - {x: 8, y: 11}
+        - {x: 7, y: -11}
+        - {x: -7, y: -11}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75f27598eac16949b7bf49fbe82d5da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBro1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: -12}
+        - {x: -8, y: 2.8554077}
+        - {x: -8, y: 12}
+        - {x: 7, y: 12}
+        - {x: 7.9999695, y: 1.7940063}
+        - {x: 8, y: -12}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea77aaf383a0ba94fa9eaa875d4f90dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HammerBro2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: -12}
+        - {x: -8, y: 3}
+        - {x: -8, y: 12}
+        - {x: 8, y: 12}
+        - {x: 8, y: -12}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469e97b5af4beb54794f10fa711ec452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiranhaPlant1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40a82957e4f9954693aad36a5fb1e3c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiranhaPlant2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 96
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519018ddb4745e74f9cc729c5d8dd0bb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 112
+        width: 8
+        height: 16
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c75f27598eac16949b7bf49fbe82d5da
+      spriteID: ea5d81ae1ef7a87459abd3db057d6def
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 116
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d9a91540428ab4499077b253f444cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer3
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 96
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b844f0b41953279478d2ad1f2efc1aa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 100
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0318e8ac64e4949bf0cc37cd434706
       vertices: []
       indices: 
       edges: []

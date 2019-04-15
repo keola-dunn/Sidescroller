@@ -13,10 +13,10 @@ namespace Wep {
         // Initialization
         protected override void Awake()
         {   
-            fireRate = 15f;
-            damageMultiplier = 0.7f;
+            fireRate = 20f;
+            damageMultiplier = 0.8f;
             clipSize = 5;
-            reloadTime = 1.5f;
+            reloadTime = 1.2f;
             numShots = 5;
             arcAngle = 20f;
             increment = arcAngle/numShots;

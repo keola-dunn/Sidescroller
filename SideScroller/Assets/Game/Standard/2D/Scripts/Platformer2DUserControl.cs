@@ -117,9 +117,13 @@ namespace UnityStandardAssets._2D
                 {
                     nextWeaponGameObject.GetComponent<Shotgun>().SetAmmoText();
                 }
-                else
+                else if (nextWeaponGameObject.name == "RocketLauncher")
                 {
                     nextWeaponGameObject.GetComponent<RocketLauncher>().SetAmmoText();
+                }
+                else
+                {
+                    nextWeaponGameObject.GetComponent<LaserRifle>().SetAmmoText();
                 }
 
                 // m_Weapon = nextWeaponGameObject.GetComponent<Wep.Weapon>();

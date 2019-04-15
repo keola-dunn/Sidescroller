@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{C2F5BD75-394E-17D7-68BA-CF5504CC8223}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/CheckpointController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Standard/2D/Scripts/Camera2DFollow.cs">
     <Files>
       <File FileName="Assets/Game/Standard/2D/Scripts/PlatformerCharacter2D.cs" Line="1" Column="1" />
       <File FileName="Assets/Game/Standard/2D/Scripts/Platformer2DUserControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Game/Scripts/CheckpointController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Standard/2D/Scripts/Camera2DFollow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
