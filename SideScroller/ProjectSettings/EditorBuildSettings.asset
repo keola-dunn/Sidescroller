@@ -12,18 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: ea0eb80592a1d694492fc633cc212281
   - enabled: 1
-    path: Assets/Scenes/KeolaTestLevel.unity
-    guid: f8f86d9268b28284793450757a800ff9
+    path: Assets/Scenes/Demo.unity
+    guid: c141d24673958bb44b780d361745cca7
   - enabled: 1
-    path: Assets/Scenes/jacobTestScene.unity
-    guid: 83a404884c30e5a40a15ed3b47e7a06f
+    path: Assets/Scenes/ZombieLevel.unity
+    guid: a9c10ea04fb8af4499e93cd1e7627f62
   - enabled: 1
     path: Assets/Scenes/TestLevelK.unity
     guid: e5aec3bc2fb66964dbd111d500b13c30
-  - enabled: 1
-    path: Assets/Scenes/Level1SceneDemoMarch.unity
-    guid: cea06cc72af65da44880beb4ecec0340
-  - enabled: 1
-    path: Assets/Scenes/TestLevel.unity
-    guid: 4aa5e8ae69bd05142aae44d664d7d277
   m_configObjects: {}

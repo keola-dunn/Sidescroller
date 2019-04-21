@@ -107,6 +107,7 @@
     <Compile Include="Assets\Game\Scripts\TogglingPlatform.cs" />
     <Compile Include="Assets\Game\Scripts\Weapon.cs" />
     <Compile Include="Assets\Game\Scripts\WeaponSwitching.cs" />
+    <Compile Include="Assets\Game\Scripts\ZombieBoss.cs" />
     <Compile Include="Assets\Game\Scripts\ZombieEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\ZombieSpawner.cs" />
     <Compile Include="Assets\Game\Standard\2D\Scripts\Camera2DFollow.cs" />

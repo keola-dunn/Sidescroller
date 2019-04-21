@@ -346,6 +346,12 @@ namespace UnityStandardAssets._2D
         
         private void PlayerDeath()
         {
+            m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            foreach(Rigidbody2D child in this.GetComponentsInChildren<Rigidbody2D>())
+            {
+                child.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+
             Transform deathScreen = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
             var deathText = deathScreen.GetChild(0);
             StartCoroutine(FadeInDeath(deathScreen, deathText, 1f, 5f));
