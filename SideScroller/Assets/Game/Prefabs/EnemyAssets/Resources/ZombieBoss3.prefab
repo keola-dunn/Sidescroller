@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &872319612299061544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  maxSpeed: 4
+  maxSpeed: 3.5
   maxDistance: 20
-  attackDistance: 1.5
+  attackDistance: 4
   maxHealth: 150
   curHealth: 150
   defense: 1.5

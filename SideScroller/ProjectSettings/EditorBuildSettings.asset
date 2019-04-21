@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestLevelK.unity
     guid: e5aec3bc2fb66964dbd111d500b13c30
+  - enabled: 1
+    path: Assets/Scenes/EndLevelScene.unity
+    guid: 94580cb0d37d3dc41a73ce057de5afa6
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 421fbeed1fa947f4f928780f0a3078cc
   m_configObjects: {}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Wep;
 
@@ -183,13 +184,19 @@ namespace UnityStandardAssets._2D
 
                 //Handle death events here
                 mDead = true;
-                PlayerDeath();
-                
 
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
-                lifeDisplay.Die();
+                if (lives > -1)
+                {
+                    lifeDisplay.Die();
+                }
+                else
+                {
+                    //Load the Gameover scene
+                    SceneManager.LoadScene(5);
+                }
             }
             else
             {
@@ -316,14 +323,17 @@ namespace UnityStandardAssets._2D
             else if (other.tag.Equals("Finish"))
             {
                 //EndLevelIndicator Logic
-               
-                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+                SceneManager.LoadScene(4);
+                /**GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
 
                 foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
                     Destroy(enemy);
-                }
+                }**/
+
+
                
             }
             

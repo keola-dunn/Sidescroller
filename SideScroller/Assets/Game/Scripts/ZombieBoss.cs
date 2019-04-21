@@ -11,6 +11,8 @@ public class ZombieBoss : EnemyBehaviour
     private static GameObject boss1;
     private static GameObject boss0;
 
+    private bool airborne = false;
+
 
     // Start is called before the first frame update
     private new void Awake()
@@ -79,7 +81,30 @@ public class ZombieBoss : EnemyBehaviour
         }
         if (mSwarming && lineOfSight.collider.name.Contains("ZombieEnemy"))
         {
-            m_Rigidbody2D.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
+            m_Rigidbody2D.AddForce(new Vector2(0, 90), ForceMode2D.Impulse);
+        }
+        if((moveGoal.y - transform.position.y < 2) && !airborne)
+        {
+            switch (mLevel)
+            {
+                case 4:
+                    m_Rigidbody2D.AddForce(new Vector2(0, 2500), ForceMode2D.Impulse);
+                    break;
+                case 3:
+                    m_Rigidbody2D.AddForce(new Vector2(0, 1250), ForceMode2D.Impulse);
+                    break;
+                case 2:
+                    m_Rigidbody2D.AddForce(new Vector2(0, 900), ForceMode2D.Impulse);
+                    break;
+                case 1:
+                    m_Rigidbody2D.AddForce(new Vector2(0, 500), ForceMode2D.Impulse);
+                    break;
+                case 0:
+                    m_Rigidbody2D.AddForce(new Vector2(0, 250), ForceMode2D.Impulse);
+                    break;
+
+            }
+            airborne = true;
         }
         transform.position = Vector2.MoveTowards(transform.position, moveGoal, maxSpeed * Time.deltaTime);
     }
