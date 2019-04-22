@@ -8,7 +8,6 @@ public class EnemyBullet : Bullet
     public int damageScene = 0;
     protected override void Awake()
     {
-        speed = 12f;
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.velocity = transform.right * speed;

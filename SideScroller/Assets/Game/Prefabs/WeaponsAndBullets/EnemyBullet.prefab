@@ -142,5 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 0
+  speed: 12
   defensePenetration: 0
+  damageScene: 0

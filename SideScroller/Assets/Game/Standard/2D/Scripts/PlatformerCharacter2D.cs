@@ -64,12 +64,11 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject) {
-                    m_Grounded = true;
-                    canDoubleJump = true;
+                    if (!colliders[i].gameObject.GetComponent<BoxCollider2D>().isTrigger) {
+                        m_Grounded = true;
+                        canDoubleJump = true;
+                    }
                 }
-                // if (colliders[i].gameObject.tag == "GhostPlatform" && m_Rigidbody2D.velocity.y > 0) {
-                //     canDoubleJump = false;
-                // }
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -344,11 +343,19 @@ namespace UnityStandardAssets._2D
             if (other.gameObject.tag == "MovingPlatformSurface") {
                 m_curMovingPlatform = other.gameObject.transform;
                 transform.SetParent(m_curMovingPlatform);
+                other.gameObject.GetComponentInParent<MovingPlatform>().characterTouch();
             }
         }
 
         void OnCollisionExit2D(Collision2D other) {
             if (other.gameObject.tag == "MovingPlatformSurface") {
+                transform.parent = null;
+                m_curMovingPlatform = null;
+            }
+        }
+
+        void OnTriggerExit2D(Collider2D other) {
+            if (other.tag == "MovingPlatformSurface") {
                 transform.parent = null;
                 m_curMovingPlatform = null;
             }

@@ -25,6 +25,7 @@ public class BulletBill : EnemyBehaviour
         firePoint = weapon.Find("FirePoint");
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
+        Destroy(gameObject, 30f);
     }
 
     // Update is called once per frame
@@ -93,12 +94,23 @@ public class BulletBill : EnemyBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        Debug.Log("here");
         if (col.gameObject.tag == "Player") {
-            curHealth = 0;
+            m_dead = true;
+            boxCollider.isTrigger = true;
+            gameObject.layer = 2;
+            weapon.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = explosionEffect;
+            Destroy(gameObject, 0.25f);
             float[] array = { attackPower*2, 0 };
             col.transform.SendMessage("Damage", array);
-        } else if (col.gameObject.tag == "SolidPlatform") {
-            curHealth = 0;
+        } else if (col.gameObject.tag == "SolidPlatform" || col.gameObject.tag == "Enemy") {
+            m_dead = true;
+            boxCollider.isTrigger = true;
+            gameObject.layer = 2;
+            weapon.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = explosionEffect;
+            Destroy(gameObject, 0.25f);
         }
     }
 }

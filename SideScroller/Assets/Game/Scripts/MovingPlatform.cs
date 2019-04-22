@@ -11,6 +11,7 @@ public class MovingPlatform : MonoBehaviour
     public float waitTime;
     private float timeToMove;
     public float startDelay;
+    public bool touchToMove;
 
     // Initialization
     private void Awake()
@@ -24,6 +25,9 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (touchToMove) {
+            return;
+        }
         if (Time.time > timeToMove) {
             if (Vector2.Distance(transform.position, dest) <= 0.01) {
                 Vector2 temp = origin;
@@ -33,6 +37,9 @@ public class MovingPlatform : MonoBehaviour
             }
             transform.position = Vector2.MoveTowards(transform.position, dest, speed * Time.deltaTime);
         }
-        
+    }
+
+    public void characterTouch() {
+        touchToMove = false;
     }
 }

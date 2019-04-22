@@ -11,6 +11,8 @@ TextureImporter:
     21300012: SniperRifle2
     21300014: SniperRifle1
     21300016: Rifle2
+    21300018: LargeRocket
+    21300020: GoldRifle
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -287,6 +289,52 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c396849e2fba61d45a1576e991203162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeRocket
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 757
+        width: 37
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: -7}
+        - {x: -18.5, y: -7}
+        - {x: -18.5, y: 7}
+        - {x: 13.5, y: 7}
+        - {x: 18.5, y: 1}
+        - {x: 18.5, y: -1}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11216649543b1f846aa8e603646219ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldRifle
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 246
+        width: 136
+        height: 38
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa1e1040b3718f4a9f37d25fe29f193
       vertices: []
       indices: 
       edges: []

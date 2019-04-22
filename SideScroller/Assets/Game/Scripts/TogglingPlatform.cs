@@ -27,11 +27,23 @@ public class TogglingPlatform : MonoBehaviour
                 timeToChange = Time.time + vanishTime;
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
                 collider.isTrigger = true;
+                foreach (Transform child in transform) {
+                    BoxCollider2D surface = child.GetComponent<BoxCollider2D>();
+                    if (surface) {
+                        surface.isTrigger = true;
+                    }
+                }
                 isSolid = false;
             } else {
                 timeToChange = Time.time + solidTime;
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
                 collider.isTrigger = false;
+                foreach (Transform child in transform) {
+                    BoxCollider2D surface = child.GetComponent<BoxCollider2D>();
+                    if (surface) {
+                        surface.isTrigger = false;
+                    }
+                }
                 isSolid = true;
             }
         }
