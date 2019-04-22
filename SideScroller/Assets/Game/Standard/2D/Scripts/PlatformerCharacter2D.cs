@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Wep;
 
@@ -188,7 +189,15 @@ namespace UnityStandardAssets._2D
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
-                // lifeDisplay.Die();
+                if (lives > -1)
+                {
+                    lifeDisplay.Die();
+                }
+                else
+                {
+                    //Load the Gameover scene
+                    SceneManager.LoadScene(5);
+                }
             }
             else
             {
@@ -315,14 +324,17 @@ namespace UnityStandardAssets._2D
             else if (other.tag.Equals("Finish"))
             {
                 //EndLevelIndicator Logic
-               
-                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+                SceneManager.LoadScene(4);
+                /**GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GameObject.FindGameObjectWithTag("Finish").GetComponentInChildren<Canvas>().enabled = true;
 
                 foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
                     Destroy(enemy);
-                }
+                }**/
+
+
                
             }
             
@@ -353,6 +365,12 @@ namespace UnityStandardAssets._2D
         
         private void PlayerDeath()
         {
+            m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            foreach(Rigidbody2D child in this.GetComponentsInChildren<Rigidbody2D>())
+            {
+                child.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+
             Transform deathScreen = GameObject.FindGameObjectWithTag("HUD").transform.GetChild(3);
             var deathText = deathScreen.GetChild(0);
             StartCoroutine(FadeInDeath(deathScreen, deathText, 1f, 5f));
