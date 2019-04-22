@@ -22,6 +22,7 @@ TextureImporter:
     21300034: BulletBill
     21300036: Explosion
     21300038: VictoryFlag
+    21300040: Peach
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -491,6 +492,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b427f9671ad3afa43ba430b6ac6010f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peach
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 826
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf2000821094e1408aea49180296846
       vertices: []
       indices: 
       edges: []

@@ -67,23 +67,25 @@ public class BulletBillBoss : EnemyBehaviour
         bulletbill.attackPower = bulletDamage;
         bulletbill.attackRate = bulletAttackRate;
         bulletbill.maxSpeed = bulletSpeed;
+        Physics2D.IgnoreCollision(boxCollider, generatedBullet.GetComponent<BoxCollider2D>());
     }
 
     private void aimAttack()
     {
-        Vector3 difference = Player.position - firePoint.position;
+        Vector3 difference = firePoint.position - Player.position;
         difference.Normalize();
         float bulletRotation = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         GameObject generatedBullet;
-        if (difference.x > 0) {
-            generatedBullet = Instantiate(bulletGameObject, firePoint.position, Quaternion.Euler(0, 0, 180f + bulletRotation));
+        if (difference.x < 0) {
+            generatedBullet = Instantiate(bulletGameObject, firePoint.position, Quaternion.Euler(0, 180f, 180f - bulletRotation));
         } else {
-            generatedBullet = Instantiate(bulletGameObject, firePoint.position, Quaternion.Euler(0, 0, 180f + bulletRotation));
+            generatedBullet = Instantiate(bulletGameObject, firePoint.position, Quaternion.Euler(0, 0, bulletRotation));
         }
         BulletBill bulletbill = generatedBullet.GetComponent<BulletBill>();
         bulletbill.Player = this.Player;
         bulletbill.attackPower = bulletDamage;
         bulletbill.attackRate = bulletAttackRate;
         bulletbill.maxSpeed = bulletSpeed;
+        Physics2D.IgnoreCollision(boxCollider, generatedBullet.GetComponent<BoxCollider2D>());
     }
 }
