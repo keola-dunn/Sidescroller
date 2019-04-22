@@ -25,6 +25,8 @@ TextureImporter:
     21300040: Bulletbill
     21300042: FireShot1
     21300044: FireShot2
+    21300046: RedWingedKoopa1
+    21300048: RedWingedKoopa2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -542,6 +544,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: be468115cc26a17499e05ee2c404c064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedWingedKoopa1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 207
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3191871bc3283ae44bd126164a5b5c68
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedWingedKoopa2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 208
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a7f55538ede1c468fd83e2fe5befb2
       vertices: []
       indices: 
       edges: []

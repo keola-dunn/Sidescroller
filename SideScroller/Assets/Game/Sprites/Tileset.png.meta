@@ -16,6 +16,7 @@ TextureImporter:
     21300022: CloudFloorLeft
     21300024: CloudFloorMiddle
     21300026: CloudFloorRight
+    21300028: RedCloud
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -405,6 +406,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53595c4206f64724780c5b2ca9944b35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedCloud
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98412d39a6b1e794f844fd8397e90244
       vertices: []
       indices: 
       edges: []

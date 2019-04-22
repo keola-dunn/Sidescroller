@@ -84,6 +84,7 @@
      <Compile Include="Assets\Game\Scripts\JumpingZombie.cs" />
      <Compile Include="Assets\Game\Scripts\LaserRifle.cs" />
      <Compile Include="Assets\Game\Scripts\LaserSight.cs" />
+     <Compile Include="Assets\Game\Scripts\LavaDamage.cs" />
      <Compile Include="Assets\Game\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Game\Scripts\LifeCount.cs" />
      <Compile Include="Assets\Game\Scripts\MainMenu.cs" />
