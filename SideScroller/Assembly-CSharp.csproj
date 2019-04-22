@@ -91,7 +91,6 @@
     <Compile Include="Assets\Game\Scripts\JumpingZombie.cs" />
     <Compile Include="Assets\Game\Scripts\LaserRifle.cs" />
     <Compile Include="Assets\Game\Scripts\LaserSight.cs" />
-    <Compile Include="Assets\Game\Scripts\LevelSelect.cs" />
     <Compile Include="Assets\Game\Scripts\LifeCount.cs" />
     <Compile Include="Assets\Game\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Game\Scripts\MovingPlatform.cs" />
@@ -110,6 +109,7 @@
     <Compile Include="Assets\Game\Scripts\TogglingPlatform.cs" />
     <Compile Include="Assets\Game\Scripts\Weapon.cs" />
     <Compile Include="Assets\Game\Scripts\WeaponSwitching.cs" />
+    <Compile Include="Assets\Game\Scripts\ZombieBoss.cs" />
     <Compile Include="Assets\Game\Scripts\ZombieEnemy.cs" />
     <Compile Include="Assets\Game\Scripts\ZombieSpawner.cs" />
     <Compile Include="Assets\Game\Standard\2D\Scripts\Camera2DFollow.cs" />
