@@ -184,18 +184,10 @@ namespace UnityStandardAssets._2D
 
                 //Handle death events here
                 mDead = true;
-<<<<<<< HEAD
-                // PlayerDeath();
-                
-=======
->>>>>>> 8a73009bf0e5a59964e9ce01dbdcc5f5f127ebbf
 
                 transform.position = respawnPoint;
                 curHealth = 200;
                 lives--;
-<<<<<<< HEAD
-                // lifeDisplay.Die();
-=======
                 if (lives > -1)
                 {
                     lifeDisplay.Die();
@@ -205,7 +197,6 @@ namespace UnityStandardAssets._2D
                     //Load the Gameover scene
                     SceneManager.LoadScene(5);
                 }
->>>>>>> 8a73009bf0e5a59964e9ce01dbdcc5f5f127ebbf
             }
             else
             {
